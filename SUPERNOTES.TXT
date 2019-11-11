@@ -350,6 +350,44 @@ How to delete a file?
 
 
 How to do undo?
+==========================================
+ 162  clear
+  163  git status
+  164  touch clean.txt
+  165  git status
+  166  git clean -f
+  167  git status
+  168  CLEAR
+  169  touch reset.txt
+  170  git status
+  171  git add .
+  172  git status
+  173  git reset reset.txt
+  174  git status
+  175  clear
+  176  git clean -f
+  177  touch revert.txt
+  178  git status
+  179  git add .
+  180  git status
+  181  git commit -m"adding"
+  182  git status
+  183  touch good.txt;git add .;git commit -m
+  184  touch good.txt;git add .;git commit -m"good"
+  185  git log --oneline
+  186  touch bad.txt;git add .;git commit -m"
+bad"
+  187  git log --oneline
+  188  git revert ca5b455
+  189  git log --oneline
+  190  git diff 8376ed3 ca5b455
+  191  git diff 8376ed3 961ef68
+  192  history
+
+
+Working Dir ----> Staging ----------> repo
+            ADD             Commit   
+==================================================== 
 
 
 
