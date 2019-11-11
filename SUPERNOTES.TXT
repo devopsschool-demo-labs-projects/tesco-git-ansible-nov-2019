@@ -211,3 +211,17 @@ WHEN ?
    58  git log
    59  git show 23527634d8678548306d9d9809a932a71e0f6aac
    60  history
+     61  clear
+   62  git log
+   63  start .
+   64  git status
+   65  touch file3.txt
+   66  touch file34.txt
+   67  git status
+   68  git add file2.txt
+   69  git status
+   70  git commit -m"addong file2"
+   71  git status
+   72  ls
+   73  history
+
