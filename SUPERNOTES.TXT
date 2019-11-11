@@ -242,3 +242,79 @@ commit-id AKA checksum AKS hash
    71  git status
    72  ls
    73  history
+==============================================================
+==============================================================
+How to add mulitple file
+how to add directoru
+How to commit selected FILES
+how to rename it?
+how to copy from one to another?
+How to move a file from one place to another?
+How to edit file?
+
+
+ 74  clear
+   75  ls
+   76  git status
+   77  touch file5.txt
+   78  touch file6.txt;touch file7.txt file8.txt
+   79  clear
+   80  ls
+   81  git status
+   82  git add .
+   83  git status
+   84  git commit -m
+   85  clear
+   86  git commit -m"adding all"
+   87  git status
+   88  touch file9.txt file10.txt
+   89  git status
+   90  git add  .
+   91  git commit -m"adding" file9.txt
+   92  git status
+   93  clear
+   94  ls
+   95  clear
+   96  mkdir src
+   97  git status
+   98  touch src/file.txt
+   99  git status
+  100  git add .;git commit -m"adding dir"
+  101  git status
+  102  ls
+  103  clear
+  104  ls
+  105  git mv file1.txt file11.txt
+  106  git status
+  107  git commit -m"rename"
+  108  ls
+  109  git mv file10.txt src/file10.txt
+  110  git status
+  111  git commit -m"moving "
+  112  git status
+  113  clear
+  114  ls
+  115  vi file11.txt
+  116  git status
+  117  git add /
+  118  git add .
+  119  git status
+  120  git commit -m"adding"
+  121  history
+
+
+
+What if i delete a file ---> What would happen and how to get it back?
+Branching and Merging
+
+How to work with multiple People?
+    github
+VS CODE
+How to undo?
+rename ?
+Permanent remove ----
+
+
+
+
+
