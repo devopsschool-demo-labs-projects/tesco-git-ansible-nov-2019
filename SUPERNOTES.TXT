@@ -301,6 +301,58 @@ How to edit file?
   119  git status
   120  git commit -m"adding"
   121  history
+==================================================
+How to delete a file?
+
+122  clear
+  123  ls
+  124  git log
+  125  clear
+  126  git log --oneline
+  127  clear
+  128  start .
+  129  git log --oneline
+  130  pwd
+  131  ls
+  132  git status
+  133  clear
+  134  git status
+  135  git log --oneline
+  136  ls
+  137  git rm file2.txt
+  138  git status
+  139  ls
+  140  git commit -m"adding"
+  141  git status
+  142  ls
+  143  git log --oneline
+  144  ls
+  145  git checkout 1a9c62f
+  146  ls
+  147  git checkout 2352763
+  148  ls
+  149  git stayus
+  150  git status
+  151  git checkout ed2a5b9
+  152  git checkout master
+  153  git checkout ed2a5b9
+  154  clear
+  155  ls
+  156  git checkout master
+  157  clear
+  158  ls
+  159  git log --oneline
+  160  git show 1a9c62f
+  161  history
+
+
+
+
+
+How to do undo?
+
+
+
 
 
 
