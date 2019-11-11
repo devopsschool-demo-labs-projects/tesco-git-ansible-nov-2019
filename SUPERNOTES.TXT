@@ -388,10 +388,65 @@ bad"
 Working Dir ----> Staging ----------> repo
             ADD             Commit   
 ==================================================== 
+RAJESH (REPO)
+                RAMU - Created his own repo.....
+                Reena -- She has no local repo
+
+Repo ----------- Repo
+        SSH
+        HTTP
+    ----------------
+    ---- github
+            Community
+            Enterprise
+    ----gitlab
+    ----bitbucket
+    ----gerrit
+    ----
 
 
-
-
+192  history
+  193  git log
+  194  git log --online
+  195  git log --oneline
+  196  pwd
+  197  clear
+  198  ls
+  199  cd ..
+  200  ls
+  201  mkdir meena
+  202  mkdir rami
+  203  clear
+  204  ls
+  205  git rami/
+  206  cd rami
+  207  git init
+  208  clear
+  209  cd ..
+  210  ls
+  211  cd git1/
+  212  clear
+  213  owd
+  214  pwd
+  215  git push https://github.com/devopsschool-lab-exercise/tesco-test.git master
+  216  git log --oneline
+  217  clear
+  218  ls
+  219  cd ..
+  220  ls
+  221  cd rami/
+  222  git pull https://github.com/devopsschool-lab-exercise/tesco-test.git master
+  223  git log --oneline
+  224  clear
+  225  cd ..
+  226  ls
+  227  cd meena/
+  228  git clone https://github.com/devopsschool-lab-exercise/tesco-test.git
+  229  ls
+  230  cd tesco-test/
+  231  git log --oneline
+  232  ls
+  233  history
 
 
 What if i delete a file ---> What would happen and how to get it back?
