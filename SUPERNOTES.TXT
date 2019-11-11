@@ -459,6 +459,622 @@ How to undo?
 rename ?
 Permanent remove ----
 
+12.30 PM - 8:30 PM 
+1 - LONG BREAK - 2:00 PM - 2.45 PM
+2. 5 PM
+3. 6.30 5PM
+-----------------------------------------
+-----------------------------------------
+GIT
+ANSIBLE
+==========================================
+Prod - TescoX
+Mgr - Mgrx
+    ----------------------------------
+    EVERY COMMIT MUST GO TO PRODUCTION
+    QUALITY REDEFINED
+    Cost REDUCTION
+==========================================
+Hiring------
+
+Architect - PLANNING  - JIRA - CONFLUENCE -
+DEV -- 10 MODULE - 10 ENGINEER
+            --------------------------------------
+            DEVOPS - 
+                        A PERSON WHO CAN CODE FOr PROD
+                        A PERSON WHO CAN CODE FOR TESTING A PROD
+                        A PERSON WHO CAN CODE AGAIN BUT INFRA.
+                        --------------DEVOPS GUYS DO EVEythNG---------
+
+CUrR RELASE CYCLE               EXPECtED
+===========================================================================
+15 DAYS                         1 HOUR
+1 WEEK                          1 HOUR
+                        --------------------------------------------------
+                        CODE-TESTING-RELEASE
+============================================================================
+                    MICROSERVICES
+Architect - PLANNING  - JIRA - CONFLUENCE -
+DEV -- 10 MODULE - 10 ENGINEER
+    Code Integ ------> GIT
+    ???????         WHO
+                    WHY
+                    WHERE
+                    WHAT
+    Code Review 
+            PEER Code - github, gerrit
+            Static Code - Sonarqube
+    Build mgmt -MaVEN - gRADLE - MsbUILD
+    UT - Junit - Nunit 
+    Packaging - 
+            SYS
+            APP 
+    Archive Package & repo  - NEXUS - Archiva
+    ======================================================
+    Deployment 2
+                    QA
+                    UAT
+                    PP
+                    PROD
+    TescoX.45.6 --> 100 BOXES
+    -----------------------------
+    - 50 W - 50 L
+    - 50 NGX - 50 APA
+    - 25 tom - 25 wl - 25 ws - 25 jbos
+    - 25 mysql - 25 ora - 25 ps - 25 ms
+    ---- 100 diff
+    =====================================
+    1 dep - 9 MINS?????
+    100 dEP? - 9 MINS?
+    ----------------------------
+    1 SEC - Container - Docker - Kubernmetes
+
+        -------------------------
+        how?
+                Parrell Dep
+    Programmng - 
+                ANSIBLE
+                PUPPET
+                CHEF
+                SALT
+                CFENGine
+                SCCm
+    GUI 
+                Octopus Deploy
+                Udeploy
+
+================================================
+AT 
+===============================================
+Code Coverage -- Test Coverage  
+                    JACOCO - NOCVER - COBERTURA
+============================================================================
+INTEGRATE WITH ALL
+SCHEDULING
+FEEDBACK
+DASHBOARD
+------------------------------------------------------------------------------------
+                            JENKINS
+
+
+ PROD
+        Deployment
+        Moniorting
+                    INFRA - 
+                    PERFORCE - 
+                    LOG  - 
+                    SECURity - 
+
+https://www.devopsschool.com/path/
+==================================================================
+What is Git?    
+        Version Control system
+        ---- 
+            WHO 
+            WHAT 
+            WHERE
+            WHY
+
+        Distributed Source Code mgmt tool
+        -----------
+
+        FREE
+        Open Source
+        Dev by Linus Tovald
+
+Why We need git?
+    To store a changes in FILES
+                    ---- Source Code
+    If you want to work from REMOTE ISLEND with ANY SORT OF NETWORK
+
+Other tool - 
+RCS -> CVS --> SVN - > GIT
+Harvest -> CC -> VSS -> Mercury -> P4 - > TFS
+=================================================
+What makes GIT diff from other.....
+        Distributed
+
+ALL TOOLS are based Open    
+=============== SERVER - CLIENT MODel
+
+GIT - 
+===============  Distributed
+
+===============================================================
+How to install git?
+    Linux 
+        apt-get install git
+        yum install git
+    Windows
+        exe from git-scm.com
+                using git bash 
+        GUI
+            SourceTree
+            TortiseGit
+
+    Mac - DMG from git-scm.com
+
+========================================================
+Git Basic Workflow
+==========================================
+Step 1 - Go to Empty dir and create a repo.. 
+$ git init
+
+Step 2 - Create a file which you want to version.
+                --- SAME PLACE WHErE YOU HAVE .git
+                ---- WE CALL IT "WORKSAPCE"
+
+Step 3 - Adding a file to repo.....[[[[ADDING A FROM FROM WORKSAPCE TO STAGING]]]]
+
+ONE TIME -----
+---------------------------------------
+git config user.name "Rajesh Kumar"
+git config user.email "rajesh@scmgalaxy.com"
+git config --list
+
+
+Step 4 - Commit a file to repo [[[[COMMITING A FROM FROM STAGNG TO REPO]]]]
+
+Step 5 - View a file
+Step 6 - View a file
+
+WHO MODIFIED
+WHAT MODIFICATioN
+WHERE ?
+WHY MODIFY
+WHEN ?
+
+
+
+     35  mkdir git-tesco
+   36  cd git-tesco/
+   37  clear
+   38  pwd
+   39  mkdir git1
+   40  ls
+   41  cd git1
+   42  start .
+   43  git init
+   44  clear
+   45  ls
+   46  ls -la
+   47  pwd
+   48  touch file1.txt
+   49  start .
+   50  touch file2.txt
+   51  git add file1.txt
+   52  git config user.name "Rajesh Kumar"
+   53  git config user.email "rajesh@scmgalaxy.com"
+   54  clear
+   55  git config --list
+   56  git commit -m"First commit"
+   57  clear
+   58  git log
+   59  git show 23527634d8678548306d9d9809a932a71e0f6aac
+   60  history
+
+http://bit.ly/2Q64AhS
+
+Rajesh Kumar@DESKTOP-6KRAAR8 MINGW64 /e/git-tesco/git1 (master)
+$ git log
+commit 23527634d8678548306d9d9809a932a71e0f6aac (HEAD -> master)
+Author: Rajesh Kumar <rajesh@scmgalaxy.com>
+Date:   Mon Nov 11 15:40:36 2019 +0530
+
+    First commit
+
+Rajesh Kumar@DESKTOP-6KRAAR8 MINGW64 /e/git-tesco/git1 (master)
+$
+
+23527634d8678548306d9d9809a932a71e0f6aac 
+commit-id AKA checksum AKS hash
+            GENERATED By SHA1
+
+  61  clear
+   62  git log
+   63  start .
+   64  git status
+   65  touch file3.txt
+   66  touch file34.txt
+   67  git status
+   68  git add file2.txt
+   69  git status
+   70  git commit -m"addong file2"
+   71  git status
+   72  ls
+   73  history
+==============================================================
+==============================================================
+How to add mulitple file
+how to add directoru
+How to commit selected FILES
+how to rename it?
+how to copy from one to another?
+How to move a file from one place to another?
+How to edit file?
+
+
+ 74  clear
+   75  ls
+   76  git status
+   77  touch file5.txt
+   78  touch file6.txt;touch file7.txt file8.txt
+   79  clear
+   80  ls
+   81  git status
+   82  git add .
+   83  git status
+   84  git commit -m
+   85  clear
+   86  git commit -m"adding all"
+   87  git status
+   88  touch file9.txt file10.txt
+   89  git status
+   90  git add  .
+   91  git commit -m"adding" file9.txt
+   92  git status
+   93  clear
+   94  ls
+   95  clear
+   96  mkdir src
+   97  git status
+   98  touch src/file.txt
+   99  git status
+  100  git add .;git commit -m"adding dir"
+  101  git status
+  102  ls
+  103  clear
+  104  ls
+  105  git mv file1.txt file11.txt
+  106  git status
+  107  git commit -m"rename"
+  108  ls
+  109  git mv file10.txt src/file10.txt
+  110  git status
+  111  git commit -m"moving "
+  112  git status
+  113  clear
+  114  ls
+  115  vi file11.txt
+  116  git status
+  117  git add /
+  118  git add .
+  119  git status
+  120  git commit -m"adding"
+  121  history
+==================================================
+How to delete a file?
+
+122  clear
+  123  ls
+  124  git log
+  125  clear
+  126  git log --oneline
+  127  clear
+  128  start .
+  129  git log --oneline
+  130  pwd
+  131  ls
+  132  git status
+  133  clear
+  134  git status
+  135  git log --oneline
+  136  ls
+  137  git rm file2.txt
+  138  git status
+  139  ls
+  140  git commit -m"adding"
+  141  git status
+  142  ls
+  143  git log --oneline
+  144  ls
+  145  git checkout 1a9c62f
+  146  ls
+  147  git checkout 2352763
+  148  ls
+  149  git stayus
+  150  git status
+  151  git checkout ed2a5b9
+  152  git checkout master
+  153  git checkout ed2a5b9
+  154  clear
+  155  ls
+  156  git checkout master
+  157  clear
+  158  ls
+  159  git log --oneline
+  160  git show 1a9c62f
+  161  history
+
+
+
+
+
+How to do undo?
+==========================================
+ 162  clear
+  163  git status
+  164  touch clean.txt
+  165  git status
+  166  git clean -f
+  167  git status
+  168  CLEAR
+  169  touch reset.txt
+  170  git status
+  171  git add .
+  172  git status
+  173  git reset reset.txt
+  174  git status
+  175  clear
+  176  git clean -f
+  177  touch revert.txt
+  178  git status
+  179  git add .
+  180  git status
+  181  git commit -m"adding"
+  182  git status
+  183  touch good.txt;git add .;git commit -m
+  184  touch good.txt;git add .;git commit -m"good"
+  185  git log --oneline
+  186  touch bad.txt;git add .;git commit -m"
+bad"
+  187  git log --oneline
+  188  git revert ca5b455
+  189  git log --oneline
+  190  git diff 8376ed3 ca5b455
+  191  git diff 8376ed3 961ef68
+  192  history
+
+
+Working Dir ----> Staging ----------> repo
+            ADD             Commit   
+==================================================== 
+RAJESH (REPO)
+                RAMU - Created his own repo.....
+                Reena -- She has no local repo
+
+Repo ----------- Repo
+        SSH
+        HTTP
+    ----------------
+    ---- github
+            Community
+            Enterprise
+    ----gitlab
+    ----bitbucket
+    ----gerrit
+    ----
+
+
+192  history
+  193  git log
+  194  git log --online
+  195  git log --oneline
+  196  pwd
+  197  clear
+  198  ls
+  199  cd ..
+  200  ls
+  201  mkdir meena
+  202  mkdir rami
+  203  clear
+  204  ls
+  205  git rami/
+  206  cd rami
+  207  git init
+  208  clear
+  209  cd ..
+  210  ls
+  211  cd git1/
+  212  clear
+  213  owd
+  214  pwd
+  215  git push https://github.com/devopsschool-lab-exercise/tesco-test.git master
+  216  git log --oneline
+  217  clear
+  218  ls
+  219  cd ..
+  220  ls
+  221  cd rami/
+  222  git pull https://github.com/devopsschool-lab-exercise/tesco-test.git master
+  223  git log --oneline
+  224  clear
+  225  cd ..
+  226  ls
+  227  cd meena/
+  228  git clone https://github.com/devopsschool-lab-exercise/tesco-test.git
+  229  ls
+  230  cd tesco-test/
+  231  git log --oneline
+  232  ls
+  233  history
+
+
+What if i delete a file ---> What would happen and how to get it back?
+Branching and Merging
+
+How to work with multiple People?
+    github
+
+
+PLEASE FILL THIS FROM
+http://bit.ly/2KbWznX
+
+Github----ORG
+                USERS
+                TEAM
+                GROUP
+                REPO
+
+
+
+sonu6252
+prktechie
+shashikalabhat
+ramguruju99
+chandrasangama
+AvinashChava
+Git
+Git
+ramaudaya9620
+sijocyriac
+Donknows
+
+veereshnashi
+manjugit05
+send2sivakumar
+shreeshailn
+
+==============================================
+Git Branching   
+    ------ LOCAL 
+    ------ REMOTE BRANCH
+
+
+
+
+  233  history
+  234  clear
+  235  ls
+  236  cd ..
+  237  ls
+  238  cd ..
+  239  clar
+  240  ls
+  241  clear
+  242  ls
+  243  git clone https://github.com/devopsschool-lab-exercise/tesco-common.git
+  244  ls
+  245  git clone https://github.com/devopsschool-lab-exercise/tesco-common.git dir1
+  246  ls
+  247  git clone https://github.com/devopsschool-lab-exercise/tesco-common.git dir2
+  248  lear
+  249  clear
+  250  ls
+  251  cd dir1
+  252  git status
+  253  touch rajesh1.txt
+  254  git add .
+  255  git commit -m"adding"
+  256  git config user.name "Rajesh Kumar"
+  257  git config user.email "dev@ggg.com"
+  258  git commit -m"adding"
+  259  git log
+  260  git log --oneline
+  261  git push origin master
+  262  cd ..
+  263  ls
+  264  cd dir2
+  265  clear
+  266  ls
+  267  touch fdsff.txt;git add .;git commit -m"sdfsd"
+  268  git config user.name "Rajesh Kumar"
+  269  git config user.email "dev@ggg.com"
+  270  touch fdsff.txt;git add .;git commit -m"sdfsd"
+  271  git push origin master
+  272  git pull origin master
+  273  git push origin master
+  274  clear
+  275  git branch -a
+  276  git branch -r
+  277  pwd
+  278  clear
+  279  ls
+  280  clear
+  281  ls
+  282  git branch -a
+  283  ls
+  284  git fetch origin master
+  285  clear
+  286  ls
+  287  git branch -a
+  288  git checkout
+  289  git checkout remotes/origin/master
+  290  clear
+  291  ls
+  292  git checkout master
+  293  git fetch origin master
+  294  ls
+  295  git checkout remotes/origin/master
+  296  clear
+  297  ls
+  298  git checkout master
+  299  history
+  300  git merge remotes/origin/master
+  301  ls
+  302  clear
+  303  ls
+  304  git branch
+  305  git branch fea1
+  306  git branch
+  307  git checkout fea1
+  308  ls
+  309  touch fea1.txt;git add .;git commit -m"adding fea1"
+  310  clear
+  311  ls
+  312  git checkout master
+  313  ls
+  314  git merge fea
+  315  git merge fea1
+  316  ls
+  317  git pusr origin fea1
+  318  git push origin fea1
+  319  clear
+  320  ls
+  321  vi CONF
+  322  more CONF
+  323  cat CONF
+  324  git add .;git commit -m"adding"
+  325  git checkout fea1 ea1
+  326  git checkout fea1
+  327  clear
+  328  vi CONF
+  329  git add .;git commit -m"adding"
+  330  git checkout maaster
+  331  git checkout master
+  332  git merge fea1
+  333  git status
+  334  vi CONF
+  335  git add .
+  336  git commit -m"resolved"
+  337  git merge fea1
+  338  clear
+  339  git log --online
+  340  git log --oneline
+  341  git tag list
+  342  git tag release1.0
+  343  git tag list
+  344  git tag --list
+  345  git push origin release1.0
+  346  history
+
+
+
+
+
+
+
+
 
 
 
