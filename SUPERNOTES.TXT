@@ -1,0 +1,213 @@
+12.30 PM - 8:30 PM 
+1 - LONG BREAK - 2:00 PM - 2.45 PM
+2. 5 PM
+3. 6.30 5PM
+-----------------------------------------
+-----------------------------------------
+GIT
+ANSIBLE
+==========================================
+Prod - TescoX
+Mgr - Mgrx
+    ----------------------------------
+    EVERY COMMIT MUST GO TO PRODUCTION
+    QUALITY REDEFINED
+    Cost REDUCTION
+==========================================
+Hiring------
+
+Architect - PLANNING  - JIRA - CONFLUENCE -
+DEV -- 10 MODULE - 10 ENGINEER
+            --------------------------------------
+            DEVOPS - 
+                        A PERSON WHO CAN CODE FOr PROD
+                        A PERSON WHO CAN CODE FOR TESTING A PROD
+                        A PERSON WHO CAN CODE AGAIN BUT INFRA.
+                        --------------DEVOPS GUYS DO EVEythNG---------
+
+CUrR RELASE CYCLE               EXPECtED
+===========================================================================
+15 DAYS                         1 HOUR
+1 WEEK                          1 HOUR
+                        --------------------------------------------------
+                        CODE-TESTING-RELEASE
+============================================================================
+                    MICROSERVICES
+Architect - PLANNING  - JIRA - CONFLUENCE -
+DEV -- 10 MODULE - 10 ENGINEER
+    Code Integ ------> GIT
+    ???????         WHO
+                    WHY
+                    WHERE
+                    WHAT
+    Code Review 
+            PEER Code - github, gerrit
+            Static Code - Sonarqube
+    Build mgmt -MaVEN - gRADLE - MsbUILD
+    UT - Junit - Nunit 
+    Packaging - 
+            SYS
+            APP 
+    Archive Package & repo  - NEXUS - Archiva
+    ======================================================
+    Deployment 2
+                    QA
+                    UAT
+                    PP
+                    PROD
+    TescoX.45.6 --> 100 BOXES
+    -----------------------------
+    - 50 W - 50 L
+    - 50 NGX - 50 APA
+    - 25 tom - 25 wl - 25 ws - 25 jbos
+    - 25 mysql - 25 ora - 25 ps - 25 ms
+    ---- 100 diff
+    =====================================
+    1 dep - 9 MINS?????
+    100 dEP? - 9 MINS?
+    ----------------------------
+    1 SEC - Container - Docker - Kubernmetes
+
+        -------------------------
+        how?
+                Parrell Dep
+    Programmng - 
+                ANSIBLE
+                PUPPET
+                CHEF
+                SALT
+                CFENGine
+                SCCm
+    GUI 
+                Octopus Deploy
+                Udeploy
+
+================================================
+AT 
+===============================================
+Code Coverage -- Test Coverage  
+                    JACOCO - NOCVER - COBERTURA
+============================================================================
+INTEGRATE WITH ALL
+SCHEDULING
+FEEDBACK
+DASHBOARD
+------------------------------------------------------------------------------------
+                            JENKINS
+
+
+ PROD
+        Deployment
+        Moniorting
+                    INFRA - 
+                    PERFORCE - 
+                    LOG  - 
+                    SECURity - 
+
+https://www.devopsschool.com/path/
+==================================================================
+What is Git?    
+        Version Control system
+        ---- 
+            WHO 
+            WHAT 
+            WHERE
+            WHY
+
+        Distributed Source Code mgmt tool
+        -----------
+
+        FREE
+        Open Source
+        Dev by Linus Tovald
+
+Why We need git?
+    To store a changes in FILES
+                    ---- Source Code
+    If you want to work from REMOTE ISLEND with ANY SORT OF NETWORK
+
+Other tool - 
+RCS -> CVS --> SVN - > GIT
+Harvest -> CC -> VSS -> Mercury -> P4 - > TFS
+=================================================
+What makes GIT diff from other.....
+        Distributed
+
+ALL TOOLS are based Open    
+=============== SERVER - CLIENT MODel
+
+GIT - 
+===============  Distributed
+
+===============================================================
+How to install git?
+    Linux 
+        apt-get install git
+        yum install git
+    Windows
+        exe from git-scm.com
+                using git bash 
+        GUI
+            SourceTree
+            TortiseGit
+
+    Mac - DMG from git-scm.com
+
+========================================================
+Git Basic Workflow
+==========================================
+Step 1 - Go to Empty dir and create a repo.. 
+$ git init
+
+Step 2 - Create a file which you want to version.
+                --- SAME PLACE WHErE YOU HAVE .git
+                ---- WE CALL IT "WORKSAPCE"
+
+Step 3 - Adding a file to repo.....
+
+ONE TIME -----
+---------------------------------------
+git config user.name "Rajesh Kumar"
+git config user.email "rajesh@scmgalaxy.com"
+git config --list
+
+
+Step 4 - Commit a file to repo
+
+Step 5 - View a file
+Step 6 - View a file
+
+WHO MODIFIED
+WHAT MODIFICATioN
+WHERE ?
+WHY MODIFY
+WHEN ?
+
+
+
+     35  mkdir git-tesco
+   36  cd git-tesco/
+   37  clear
+   38  pwd
+   39  mkdir git1
+   40  ls
+   41  cd git1
+   42  start .
+   43  git init
+   44  clear
+   45  ls
+   46  ls -la
+   47  pwd
+   48  touch file1.txt
+   49  start .
+   50  touch file2.txt
+   51  git add file1.txt
+   52  git config user.name "Rajesh Kumar"
+   53  git config user.email "rajesh@scmgalaxy.com"
+   54  clear
+   55  git config --list
+   56  git commit -m"First commit"
+   57  clear
+   58  git log
+   59  git show 23527634d8678548306d9d9809a932a71e0f6aac
+   60  history
