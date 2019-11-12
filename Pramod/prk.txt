@@ -1,3 +1,22 @@
-#To create a group
+Program 1 – Write a Ansible Adhoc Commands to create a group called “deploy
+
+
 ansible localhost -m"group" -a"name=deploy"
+
+Program 2 – Write a Ansible Adhoc Commands to create a user called “deploy-user” which is part of group called “deploy” and with /bin/bash shell.
+
 ansible localhost -m"user" -a 'name="deploy-user" group="deploy" shell="/bin/bash"'
+
+Program 3 – Write a Ansible Adhoc commands install package named “httpd” in RHEL/centos.
+
+ansible localhost -m yum -a"name=httpd state=installed"
+
+
+Program 4 – Write a Ansible Adhoc commands to start and enable the service named “httpd”
+
+ansible localhost -m service  -a"name=httpd state=started"
+
+
+Program 5 – Write a Ansible commands to create a file called “index.html” in /var/www/html with some dummy html contents.
+
+ansible localhost -m file  -a'path=/var/www/html/index.html state=touch'
