@@ -14,3 +14,7 @@ ansible localhost -m blockinfile  -a'path=/var/www/html/index.html state=present
 
 ansible localhost -m yum -a"name=git state=installed"
 ansible localhost -m yum -a"name=wget state=installed"
+
+
+ansible localhost -m file  -a'path=/opt/test.txt state=touch'
+ansible localhost -m file  -a'path=/opt/test.txt state=absent'
