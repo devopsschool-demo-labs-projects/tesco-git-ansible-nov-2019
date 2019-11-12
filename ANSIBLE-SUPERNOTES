@@ -316,3 +316,84 @@ ansible all -i 15.206.164.40,13.235.73.26, -m yum -m service  -a"name=httpd stat
 BUILTIN GROUP
     - all
     - nogroup
+
+ansible all -i 15.206.164.40,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26, -m yum -a"name=httpd state=installed" -u ec2-user --key-file=remote.pem -b
+ansible all -i 15.206.164.40,13.235.73.26, -m yum -m service  -a"name=httpd state=started"  -u ec2-user --key-file=remote.pem -b
+
+Solution
+=================
+Inventory
+
+15.206.164.40
+13.235.73.26
+
+ansible all -i inventory -m yum -a"name=httpd state=installed" -u ec2-user --key-file=remote.pem -b
+ansible all -i inventory -m yum -m service  -a"name=httpd state=started"  -u ec2-user --key-file=remote.pem -b
+
+============================================
+Inventory
+
+[web]
+15.206.164.40
+13.235.73.26
+
+[db]
+13.235.73.26
+13.235.73.26
+
+[windows]
+13.235.73.26
+13.235.73.26
+13.235.73.26
+13.235.73.26
+13.235.73.26
+
+[linux]
+13.235.73.26
+13.235.73.26
+13.235.73.26
+13.235.73.26
+13.35.73.26
+13.235.73.26
+13.235.73.26
+13.235.73.26
+
+ansible web -i inventory1 -m yum -a"name=httpd state=installed" -u ec2-user --key-file=remote.pem -b
+ansible web -i inventory1 -m yum -m service  -a"name=httpd state=started"  -u ec2-user --key-file=remote.pem -b
+
+============================================
+Inventory
+
+[web]
+15.206.164.40
+
+[web1]
+13.235.73.26
+
+[gog:children]
+web
+web1
+
+[db]
+13.235.73.26
+13.235.73.26
+
+[windows]
+13.235.73.26
+13.235.73.26
+13.235.73.26
+13.235.73.26
+13.235.73.26
+
+[linux]
+13.235.73.26
+13.235.73.26
+13.235.73.26
+13.235.73.26
+13.35.73.26
+13.235.73.26
+13.235.73.26
+13.235.73.26
+
+ansible gog -i inventory2 -m yum -a"name=httpd state=installed" -u ec2-user --key-file=remote.pem -b
+ansible gog -i inventory2 -m yum -m service  -a"name=httpd state=started"  -u ec2-user --key-file=remote.pem -b
