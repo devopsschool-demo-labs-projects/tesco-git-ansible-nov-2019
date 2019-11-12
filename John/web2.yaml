@@ -1,0 +1,10 @@
+---
+- name: This installs git and wget and reboot the servers
+  hosts: 192.168.56.102,192.168.56.103,
+  tasks:
+  - name: Install git 
+    yum: name=git state=present
+  - name: Install Wget
+    yum: name=wget state=present
+  - name: Reboot the servers
+    reboot: msg="Rebooting the server from King" reboot_timeout=300

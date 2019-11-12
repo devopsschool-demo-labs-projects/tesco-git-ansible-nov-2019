@@ -1,0 +1,36 @@
+- name: this example1
+  hosts : web
+  tasks:
+   - name: create group
+     group: name=deploy 
+- name: this example1
+  hosts : web
+  tasks:
+   - name: create user
+     user: name=deploy-user group=deploy shell="/bin/bash"
+- name: this example1
+  hosts : web
+  tasks:
+   - name: create httpd
+     yum: name=httpd state=installed
+   - name: start service
+     service: name=httpd state=started
+- name: This sets up an httpd webserver
+  hosts: web
+  tasks:
+  - name: create a empty file
+    file: dest=/opt/test.txt state=touch
+  - name: copy a file
+    copy: dest=/var/www/html/ src="~/index.html"
+- name: this example1
+  hosts : web
+  tasks:
+  - name: delete file
+    file: name=~/second.txt state=absent
+- name: this example1
+  hosts: web
+  tasks:
+  - name: create file
+    file: path="/var/www/index.html" state:touch
+  - name: edit file
+    blockinfile: path="/var/www/index.html" state=present block="asrarAbu"

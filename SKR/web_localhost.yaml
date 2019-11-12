@@ -1,0 +1,12 @@
+---
+- name: Installing httpd server
+  hosts: localhost
+  tasks:
+  - name: Installing httpd server
+    yum: name=httpd state=present
+  - name: Starting service
+    service: name=httpd state=started enabled=yes
+  - name: Creating index html
+    file: path="/var/www/html/index.html" state=touch
+  - name: Adding content to index html
+    blockinfile: path="/var/www/html/index.html" block="Hello World 2"

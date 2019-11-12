@@ -28,3 +28,4 @@ https://www.devopsschool.com/blog/ansible-adhoc-commands-lab-excercise-part-1/
 - ansible all -i inventory -m yum -a "name=wget state=installed" -u vagrant --private-key login.pem -b
 - ansible gog -i inventory1 -m yum -a "name=wget state=installed" -u vagrant --private-key login.pem -b
 - ansible-playbook -i inventory1 web.yaml -u vagrant --private-key=login.pem -b
+- ansible-playbook web_localhost.yaml # for localhost 

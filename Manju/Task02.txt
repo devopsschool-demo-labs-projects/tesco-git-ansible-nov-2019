@@ -16,3 +16,99 @@
     group: name=deploy
     
     
+    ======================
+    
+    1>
+---
+- name: TASK Git Repo
+  hosts: web
+  tasks:
+   - name: TASK Repo
+     git: dest="/root/MAX/repo" repo="https://github.com/scmgalaxy/ansible-role-template"
+	
+2>
+	
+---
+- name: this creates a user with name deploy-user
+  hosts: web
+  tasks:
+  - name: create group
+    user: name=deploy-user
+	
+3>
+---
+- name: this creates a group with name deploy
+  hosts: web
+  tasks:
+  - name: create group
+    group: name=deploy
+4>
+	
+---
+- name: this install httpd
+  hosts: web
+  tasks:
+  - name: create group
+    yum: name=httpd state=installed
+
+5>
+	
+---
+- name: Install git and wget
+  hosts: web
+  tasks:
+  - name: install git
+    package: name=git state=present
+  - name: install wget
+    package: name=wget state=present
+
+6>
+
+---
+- name: reboot serveweb
+  hosts: web
+  tasks:
+  - name: Reboot web server
+    reboot:
+	
+7>
+
+---
+- name: second html copy
+  hosts: web
+  tasks:
+  - name: copy second html
+    copy: dest="/var/www/html/second.html" src="/root/MAX/second.html"
+
+8>
+
+---
+- name: Touches n deletes the file
+  hosts: web
+  tasks:
+  - name: touch file
+    file: path=/opt/devopsschool.txt state=touch
+  - name: delete file
+    file: path=/opt/devopsschool.txt state=absent
+
+9>
+---
+- name: this creates and updates index.html
+  hosts: web
+  tasks:
+  - name: create indexhtml file
+    file: path=/var/www/html/index.html state=touch
+  - name: update index file
+    blockinfile: path=/var/www/html/index.html state=present block="WEEE"
+	
+10>
+
+---
+- name: Installing httpd server
+  hosts: web
+  tasks:
+  - name: Installing httpd server
+    yum: name=httpd state=present
+  - name: Starting service
+    service: name=httpd state=started enabled=yes
+    
