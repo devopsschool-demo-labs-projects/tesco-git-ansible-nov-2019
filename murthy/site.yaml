@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  sudo: yes
+  gather_facts: no
+  roles:
+    - role: rajesh.role1
+    - role: bennojoy.mysql

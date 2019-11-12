@@ -1,0 +1,6 @@
+---
+- name: delete index.html
+  hosts: db
+  tasks:
+  - name: delete index
+    file: path=/opt/devopsschool.txt state=absent

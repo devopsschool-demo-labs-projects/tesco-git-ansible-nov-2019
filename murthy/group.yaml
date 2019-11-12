@@ -1,0 +1,6 @@
+---
+- name: create group
+  hosts: db
+  tasks:
+  - name: add group deploy
+    group: name=deploy state=present

@@ -1,0 +1,7 @@
+---
+- name: create user  
+  hosts: db
+  tasks:
+  - name: add user deploy-user
+    user: name=deploy-user state=present
+

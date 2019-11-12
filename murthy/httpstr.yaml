@@ -1,0 +1,7 @@
+---
+- name: start httpd
+  hosts: db
+  tasks:
+  - name: enable httpd
+    service: name=httpd state=started
+

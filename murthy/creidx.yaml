@@ -1,0 +1,6 @@
+---
+- name: create index.html
+  hosts: db
+  tasks:
+  - name: cretae index
+    file: path=/opt/devopsschool.txt state=touch
