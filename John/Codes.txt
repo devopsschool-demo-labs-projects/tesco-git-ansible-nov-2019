@@ -21,6 +21,7 @@
    83  which git
    84  ansible localhost -m"yum" -a"name="{{ packages }}" vars="wget,"httpd-tools" state=present"
 "
-   85  ansible localhost -m"reboot" -a'msg="Reboot initiated by Ansible King" reboot_timeout=3600'
+   85  ansible localhost -m"reboot" -a'msg="Reboot initiated by Ansible King" reboot_timeout=3600'\
+   
 
 
