@@ -1,0 +1,6 @@
+---
+- name: cloning git repo
+  hosts: web1
+  tasks:
+  - name: cloining git repo
+    git: repo="https://github.com/devopsschool-lab-exercise/tesco-git-ansible-nov-2019.git" dest="/tmp/test"
