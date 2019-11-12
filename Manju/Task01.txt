@@ -1,1 +1,27 @@
 Hello "Welcome to Ansible"
+
+
+========Task01==============
+3> ansible localhost -m yum -a"name=httpd state=installed"
+
+4> ansible localhost -m service  -a"name=httpd state=started"
+
+5> ansible localhost -m file  -a'path=/var/www/html/index.html state=touch'
+
+7> ansible localhost -m yum -a"name=git state=installed"
+   ansible localhost -m yum -a"name=wget state=installed"
+   
+1> ansible localhost -m group -a "name=deploy1 state=present" 
+
+2> ansible localhost -m user -a "name=deploy1-user group=deploy1 createhome=yes" -b
+
+
+9> ansible localhost -m command -a "/sbin/reboot"
+
+10> ansible localhost -m file  -a'path=/opt/devopsschool.txt state=touch'
+
+6> ansible localhost -m copy -a "src=second.html dest=/var/www/html/second.html"
+
+8> ansible localhost -m git -a 'repo="https://github.com/devopsschool-lab-exercise/tesco-git-ansible-nov-2019.git" dest="/tmp/test" '
+
+======================================END=======================================
