@@ -283,5 +283,36 @@ EXCERCISE - 1-
 https://www.devopsschool.com/blog/ansible-adhoc-commands-lab-excercise-part-1/
 15 mins.
 
+
+============================================================
 	using ADHOC command 
 		Do one task in ONE REMOTE MACHINE
+============================================================
+
+ACS 
+13.235.73.26
+ARS
+15.206.164.40
+
+Ansible command is divided into 3 part  
+    - optional arguments
+    - Connection Options
+    - Privilege Escalation Options
+
+ansible localhost -m yum -a"name=httpd state=installed"
+ - Remote servers MUST be in form of LIST
+            - CAN BE SPECIFY ON CMD LINE.
+            - CAN BE IN FILE 
+            - CAN BE SCRIPT
+
+ansible -i 15.206.164.40 -m yum -a"name=httpd state=installed"
+ansible -i 15.206.164.40, -m yum -a"name=httpd state=installed"
+ansible all -i 15.206.164.40, -m yum -a"name=httpd state=installed"
+
+ansible all -i 15.206.164.40,13.235.73.26, -m yum -a"name=httpd state=installed" -u ec2-user --key-file=remote.pem -b
+ansible all -i 15.206.164.40,13.235.73.26, -m yum -m service  -a"name=httpd state=started"  -u ec2-user --key-file=remote.pem -b
+
+
+BUILTIN GROUP
+    - all
+    - nogroup
