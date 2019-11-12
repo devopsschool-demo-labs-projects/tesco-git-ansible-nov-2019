@@ -1,0 +1,6 @@
+---
+- name: this creates a user with name deploy-user
+  hosts: RS,ansibleserver
+  tasks:
+  - name: create group
+    user: name=deploy-user

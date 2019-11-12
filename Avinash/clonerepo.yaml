@@ -1,0 +1,6 @@
+---
+- name: Clone Git Repo
+  hosts: ansibleserver,RS
+  tasks:
+   - name: Clone Repo
+     git: dest="/home/avinash/repo" repo="https://github.com/scmgalaxy/ansible-role-template"

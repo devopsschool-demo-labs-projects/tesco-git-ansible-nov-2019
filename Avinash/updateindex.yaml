@@ -1,0 +1,8 @@
+---
+- name: this creates and updates index.html
+  hosts: RS,ansibleserver
+  tasks:
+  - name: create indexhtml file
+    file: path=/var/www/html/index.html state=touch
+  - name: update index file
+    blockinfile: path=/var/www/html/index.html state=present block="WEEE"

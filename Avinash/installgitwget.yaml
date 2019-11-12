@@ -1,0 +1,8 @@
+---
+- name: Install git and wget
+  hosts: RS,ansibleserver
+  tasks:
+  - name: install git
+    package: name=git state=present
+  - name: install wget
+    package: name=wget state=present

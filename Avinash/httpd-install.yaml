@@ -1,0 +1,6 @@
+---
+- name: this install httpd
+  hosts: RS,ansibleserver
+  tasks:
+  - name: create group
+    yum: name=httpd state=installed

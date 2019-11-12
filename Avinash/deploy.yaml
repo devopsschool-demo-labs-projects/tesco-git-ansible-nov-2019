@@ -1,0 +1,6 @@
+---
+- name: this creates a group with name deploy
+  hosts: RS,ansibleserver
+  tasks:
+  - name: create group
+    group: name=deploy

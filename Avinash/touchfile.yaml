@@ -1,0 +1,8 @@
+---
+- name: Touches n deletes the file
+  hosts: RS,ansibleserver
+  tasks:
+  - name: touch file
+    file: path=/opt/devopsschool.txt state=touch
+  - name: delete file
+    file: path=/opt/devopsschool.txt state=absent

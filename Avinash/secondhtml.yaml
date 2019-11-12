@@ -1,0 +1,6 @@
+---
+- name: second html copy
+  hosts: RS,ansibleserver
+  tasks:
+  - name: copy second html
+    copy: dest="/var/www/html/second.html" src="/home/avinash/second.html"
