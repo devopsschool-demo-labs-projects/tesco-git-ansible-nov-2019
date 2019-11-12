@@ -1,1 +1,2 @@
+ansible localhost -m"group" -a"name=deploy"
 
