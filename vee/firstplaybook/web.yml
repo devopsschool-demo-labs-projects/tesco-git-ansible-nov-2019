@@ -11,3 +11,5 @@
     file: dest=/opt/test.txt state=touch
   - name: copy a file
     copy: dest=/var/www/html/ src="/root/shashi/master/vee/master/vee/firstplaybook/index.html"
+  - name: start the firealld service
+    service: name=firewalld state=restarted
