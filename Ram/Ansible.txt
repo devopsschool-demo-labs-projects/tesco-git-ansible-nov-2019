@@ -1,2 +1,4 @@
 ansible localhost -m"group" -a"name=deploy"
 ansible localhost -m"user" -a"name="deploy-user""
+nsible localhost -m yum -a"name=httpd state=installed"
+ansible localhost -m service  -a"name=httpd state=started"
