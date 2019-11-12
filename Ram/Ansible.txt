@@ -1,2 +1,2 @@
 ansible localhost -m"group" -a"name=deploy"
-
+ansible localhost -m"user" -a"name="deploy-user""
