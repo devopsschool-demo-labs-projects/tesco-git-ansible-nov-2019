@@ -1,1 +1,7 @@
-qqqq
+ansible localhost -m group -a"name=deploy state=present"
+ansible localhost -m user -a"name=deploy-user state=present"
+ansible localhost -m package -a"name=git state=present"
+ansible localhost -m git -a"clone=yes dest=/home/common/chandra repo=https://github.com/scmgalaxy/ansible-role-template"
+ansible localhost -m reboot 
+ansible localhost -m file -a'path=/opt/devopsschool.txt state=touch'
+ansible localhost -m file -a'path=/opt/devopsschool.txt state=absent'
