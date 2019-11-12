@@ -15,4 +15,11 @@ https://www.devopsschool.com/blog/ansible-adhoc-commands-lab-excercise-part-1/
 - ansible localhost -m reboot # Cannot kill yourself.
 
 
+## Remote server
 - ansible all -i 172.42.42.102, -m yum -a 'name=wget' -u vagrant --private-key login.pem -b
+- [root@centosvm01 ~]# ansible all -i 172.42.42.102, -m reboot -u vagrant --private-key login.pem -b
+172.42.42.102 | CHANGED => {
+    "changed": true,
+    "elapsed": 19,
+    "rebooted": true
+}
