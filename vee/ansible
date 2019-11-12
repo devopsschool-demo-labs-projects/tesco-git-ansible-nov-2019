@@ -15,3 +15,14 @@ ansible all -i 192.168.56.220,192.168.56.221, -m yum -m service  -a"name=httpd s
 
 ansible all -i 192.168.56.221, -m yum -m firewalld -a"service=http permanent=yes state=enabled" 
 
+
+
+ansible all -i inventory -m yum -m firewalld -a"service=http permanent=yes state=enabled"
+
+ ansible all -i inventory -m yum -m firewalld -a"service=http permanent=yes state=enabled"
+ ansible all -i inventory1 -m yum -m firewalld -a"service=http permanent=yes state=enabled"
+ansible web -i inventory1 -m yum -m firewalld -a"service=http permanent=yes state=enabled"
+ ansible db -i inventory1 -m yum -m firewalld -a"service=http permanent=yes state=enabled"
+ansible db,web -i inventory1 -m yum -m firewalld -a"service=http permanent=yes state=enabled"
+ansible gog  -i inventory2 -m yum -m firewalld -a"service=http permanent=yes state=enabled"
+ ansible gog  -i inventory2 -m yum -m firewalld -a"service=http permanent=yes state=enabled"
