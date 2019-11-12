@@ -397,3 +397,37 @@ web1
 
 ansible gog -i inventory2 -m yum -a"name=httpd state=installed" -u ec2-user --key-file=remote.pem -b
 ansible gog -i inventory2 -m yum -m service  -a"name=httpd state=started"  -u ec2-user --key-file=remote.pem -b
+=================================================================
+What is Playbook?
+    Collection of PLAY.
+
+What is PLAY?
+    Play has Tasks
+    hosts
+
+	using Playbook(Program)
+		Do Multiple tasks(Playbook) in ONE MACHINE(localhost)
+		Do Multiple tasks(Playbook) in ONE REMOTE MACHINE
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using Inventory
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using group in Inventory
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using group of group in Inventory
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using environment directory Inventory 
+
+
+---
+- name: This sets up an httpd webserver
+  hosts: web
+  tasks:
+  - name: Install the httpd apps
+    yum: name=httpd
+  - name: start the httpd service
+    service: name=httpd state=started
+  - name: create a empty fle
+    file: dest=/opt/test.txt state=touch
+  - name: copy a file
+    copy: dest=/var/www/html/ src="/home/ec2-user/index.html"
+
+ansible-playbook -i inventory2 web.yaml -u ec2-user --key-file=remote.pem -b
+
+Excericise  -2 
+https://www.devopsschool.com/blog/ansible-playbook-lab-excercise-part-2/
