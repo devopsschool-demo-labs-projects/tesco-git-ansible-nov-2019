@@ -1,0 +1,279 @@
+What is Ansible?
+=========================================
+    Config mgmt tool.
+    FREE
+    FROM REDHAT
+        - Ansible - CMD - FREE - OPEN SOURCE
+        - Ansible Tower - CMD+GUI - PAID
+    Written in PYTHON
+    its a market Leader.
+
+What is Config mgmt?
+    SERVER(S)
+
+What is there in SERVER? AKA Resources 
+
+Ansible ---- HARDWARE(HYPERVIOSR)
+        CPU 
+        RAM
+         HDD
+SOFTWARE                    PROPERTY                ACTION
+    Package                                         I R U
+    FILE                       X                    C D 
+    DIR
+    Services                    X                      S T E D                         
+    Bash
+    PS
+PEOPLE
+    User
+    GROUPS
+PROCESS
+    Policy
+    Permissions
+
+WHY ANSIBLE?
+    EASY TO 
+        - Learn
+        - READ
+        - WRITE
+        - TEST
+        - DEBUG
+        - SHare
+        - EXTEND
+    Compare to JAVA, CPP, PErL, PYTHON
+
+    IDEOMPOTENT
+    10 Tasks ---> 1 min --> 10 mins
+    3 TASK --- 3 mins - 3 mins
+============================================
+Role 
+        DEV - A person who write code/test/debug/share with OPS.
+        ADMIN-OPS - A person who manage env - access - ha - and apply a code to SERVERS
+
+Evolution of Programming Lang
+====================
+Compiled Lang --> Intrepreted Lang --> Domain Specific - Decalarative Lang.
+                                                        ---- XML -> JSON -> YAML
+====================
+
+How to become a DEV?
+----------------------------------
+JDK ---> .java -----> .class ---> JAR ------> WAR
+    ---> FUnction
+    ---> Variable
+    ---> Operators
+    ---> Conditiong
+    ---> Loops
+
+Ansible -->.YAML ----> PLAYBOOK ----> ROLE
+    ---> FUnction
+    ---> Variable
+    ---> Operators
+    ---> Conditiong
+    ---> Loops
+
+=======================================================================        
+
+ARCHITECTURE OF ANSIBLE
+===============================
+Ansible Control Server      ------------- Ansible Remote Server(S)
+    - LINUX                                 --  ANY
+    - 64 bit                                -- ANY 
+    LINUX                                   --- LINUX USING SSH
+    LINUX                                   --- WINDOWS using HTTP WINRM
+
+    PYTHON(2.7+)                                  --- LINUX - PYTHON(2.7+)
+                                                  --- WINDOWS - WINRM
+1  MODULE from Ansible INSTALL.
+2. INVENTORY
+3. PLAYBOOK
+4. Config
+=====================================================================
+TRAINING FLOW
+=====================
+	using ADHOC command 
+		Do one task in ONE MACHINE(localhost)
+		Do one task in ONE REMOTE MACHINE
+		Do one task in MULTIPLE REMOTE MACHINES using Inventory
+		Do one task in MULTIPLE REMOTE MACHINES using group in Inventory
+	using Playbook(Program)
+		Do Multiple tasks(Playbook) in ONE MACHINE(localhost)
+		Do Multiple tasks(Playbook) in ONE REMOTE MACHINE
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using Inventory
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using group in Inventory
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using group of group in Inventory
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using environment directory Inventory 
+	using Role(Program)
+		Do One Role in in ONE MACHINE(localhost)
+		Do Multiple Roles in ONE REMOTE MACHINE
+		Do Multiple Roles in MULTIPLE REMOTE MACHINE using Inventory
+		Do Multiple Roles in MULTIPLE REMOTE MACHINE using group in Inventory
+		Do Multiple Roles in MULTIPLE REMOTE MACHINE using group of group in Inventory
+		Do Multiple Roles in MULTIPLE REMOTE MACHINE using environment directory Inventory
+====================
+
+RHEL-7.5_HVM_GA-20180322-x86_64-1-Hourly2-GP2 (ami-5b673c34)
+
+ACS 
+13.235.73.26
+ARS
+15.206.164.40
+
+User Name - ec2-user
+Passowrd - NONE
+KEY - I HAVE IT.
+
+
+How to install Ansible in ACS?
+
+How to install Ansible?
+$ sudo yum install wget -y
+$ wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+$ yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+$ sudo rpm -i epel-release-latest-7.noarch.rpm
+$ sudo yum update -y 
+$ sudo yum install ansible -y
+########
+$ systemctl stop firewalld
+$ systemctl disable firewalld
+
+[root@ip-172-31-7-122 ec2-user]# ansible --version
+ansible 2.9.0
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/sha                       re/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /bin/ansible
+  python version = 2.7.5 (default, Feb 20 2018, 09:19:12) [GCC 4.8.5 20150623 (R                       ed Hat 4.8.5-28)]
+[root@ip-172-31-7-122 ec2-user]# ansible -h
+usage: ansible [-h] [--version] [-v] [-b] [--become-method BECOME_METHOD]
+               [--become-user BECOME_USER] [-K] [-i INVENTORY] [--list-hosts]
+               [-l SUBSET] [-P POLL_INTERVAL] [-B SECONDS] [-o] [-t TREE] [-k]
+               [--private-key PRIVATE_KEY_FILE] [-u REMOTE_USER]
+               [-c CONNECTION] [-T TIMEOUT]
+               [--ssh-common-args SSH_COMMON_ARGS]
+               [--sftp-extra-args SFTP_EXTRA_ARGS]
+               [--scp-extra-args SCP_EXTRA_ARGS]
+               [--ssh-extra-args SSH_EXTRA_ARGS] [-C] [--syntax-check] [-D]
+               [-e EXTRA_VARS] [--vault-id VAULT_IDS]
+               [--ask-vault-pass | --vault-password-file VAULT_PASSWORD_FILES]
+               [-f FORKS] [-M MODULE_PATH] [--playbook-dir BASEDIR]
+               [-a MODULE_ARGS] [-m MODULE_NAME]
+               pattern
+
+Define and run a single task 'playbook' against a set of hosts
+
+positional arguments:
+  pattern               host pattern
+
+optional arguments:
+  --ask-vault-pass      ask for vault password
+  --list-hosts          outputs a list of matching hosts; does not execute
+                        anything else
+  --playbook-dir BASEDIR
+                        Since this tool does not use playbooks, use this as a
+                        substitute playbook directory.This sets the relative
+                        path for many features including roles/ group_vars/
+                        etc.
+  --syntax-check        perform a syntax check on the playbook, but do not
+                        execute it
+  --vault-id VAULT_IDS  the vault identity to use
+  --vault-password-file VAULT_PASSWORD_FILES
+                        vault password file
+  --version             show program's version number, config file location,
+                        configured module search path, module location,
+                        executable location and exit
+  -B SECONDS, --background SECONDS
+                        run asynchronously, failing after X seconds
+                        (default=N/A)
+  -C, --check           don't make any changes; instead, try to predict some
+                        of the changes that may occur
+  -D, --diff            when changing (small) files and templates, show the
+                        differences in those files; works great with --check
+  -M MODULE_PATH, --module-path MODULE_PATH
+                        prepend colon-separated path(s) to module library (def
+                        ault=~/.ansible/plugins/modules:/usr/share/ansible/plu
+                        gins/modules)
+  -P POLL_INTERVAL, --poll POLL_INTERVAL
+                        set the poll interval if using -B (default=15)
+  -a MODULE_ARGS, --args MODULE_ARGS
+                        module arguments
+  -e EXTRA_VARS, --extra-vars EXTRA_VARS
+                        set additional variables as key=value or YAML/JSON, if
+                        filename prepend with @
+  -f FORKS, --forks FORKS
+                        specify number of parallel processes to use
+                        (default=5)
+  -h, --help            show this help message and exit
+  -i INVENTORY, --inventory INVENTORY, --inventory-file INVENTORY
+                        specify inventory host path or comma separated host
+                        list. --inventory-file is deprecated
+  -l SUBSET, --limit SUBSET
+                        further limit selected hosts to an additional pattern
+  -m MODULE_NAME, --module-name MODULE_NAME
+                        module name to execute (default=command)
+  -o, --one-line        condense output
+  -t TREE, --tree TREE  log output to this directory
+  -v, --verbose         verbose mode (-vvv for more, -vvvv to enable
+                        connection debugging)
+
+Privilege Escalation Options:
+  control how and which user you become as on target hosts
+
+  --become-method BECOME_METHOD
+                        privilege escalation method to use (default=sudo), use
+                        `ansible-doc -t become -l` to list valid choices.
+  --become-user BECOME_USER
+                        run operations as this user (default=root)
+  -K, --ask-become-pass
+                        ask for privilege escalation password
+  -b, --become          run operations with become (does not imply password
+                        prompting)
+
+Connection Options:
+  control as whom and how to connect to hosts
+
+  --private-key PRIVATE_KEY_FILE, --key-file PRIVATE_KEY_FILE
+                        use this file to authenticate the connection
+  --scp-extra-args SCP_EXTRA_ARGS
+                        specify extra arguments to pass to scp only (e.g. -l)
+  --sftp-extra-args SFTP_EXTRA_ARGS
+                        specify extra arguments to pass to sftp only (e.g. -f,
+                        -l)
+  --ssh-common-args SSH_COMMON_ARGS
+                        specify common arguments to pass to sftp/scp/ssh (e.g.
+                        ProxyCommand)
+  --ssh-extra-args SSH_EXTRA_ARGS
+                        specify extra arguments to pass to ssh only (e.g. -R)
+  -T TIMEOUT, --timeout TIMEOUT
+                        override the connection timeout in seconds
+                        (default=10)
+  -c CONNECTION, --connection CONNECTION
+                        connection type to use (default=smart)
+  -k, --ask-pass        ask for connection password
+  -u REMOTE_USER, --user REMOTE_USER
+                        connect as this user (default=None)
+
+Some modules do not make sense in Ad-Hoc (include, meta, etc)
+[root@ip-172-31-7-122 ec2-user]#
+
+===================================================
+===================================================
+Project - Setup a webserver.
+
+Psucode - 
+1. Install httpd app
+2. start httpd Server
+3. Create a index.html with "Welcome to Ansible Class"
+4. Copy index.html into webserver /var/www/html
+---------------------------------------------------
+ansible module for
+----------------------------------------------------
+All Modules - https://docs.ansible.com/ansible/latest/modules/list_of_all_modules.html
+
+	using ADHOC command 
+		Do one task in ONE MACHINE(localhost)
+
+ansible localhost -m yum -a"name=httpd state=installed"
+ansible localhost -m service  -a"name=httpd state=started"
+ansible localhost -m file  -a'path=/var/www/html/index.html state=touch'
+ansible localhost -m blockinfile  -a'path=/var/www/html/index.html state=present block="WEEE"'
