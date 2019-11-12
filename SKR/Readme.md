@@ -12,4 +12,4 @@ https://www.devopsschool.com/blog/ansible-adhoc-commands-lab-excercise-part-1/
 - ansible localhost -m git -a 'repo="https://github.com/devopsschool-lab-exercise/tesco-git-ansible-nov-2019.git" dest="/tmp/test" '
 - ansible localhost -m file -a 'path="/opt/test.txt" state=touch'
 - ansible localhost -m file -a 'path="/opt/test.txt" state=absent'
-- ansible localhost -m reboot
+- ansible localhost -m reboot # Cannot kill yourself.
