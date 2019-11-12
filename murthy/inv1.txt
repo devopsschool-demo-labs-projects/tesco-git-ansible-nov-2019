@@ -1,0 +1,9 @@
+[db]
+192.168.56.102
+
+[linux]
+192.168.56.101
+
+[gog:children]
+db
+linux

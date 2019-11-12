@@ -2,3 +2,6 @@
 192.168.56.101
 [RS]
 192.168.56.102
+[gog:children]
+ansibleserver
+RS
