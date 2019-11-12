@@ -9,3 +9,4 @@ ansible localhost -m git -a 'repo="https://github.com/scmgalaxy/ansible-role-tem
 10. ansible localhost -m file  -a'path=/opt/devopsschool.txt state=touch' >> ansible localhost -m file  -a'path=/opt/devopsschool.txt state=absent'
 
 9. ansible localhost -m reboot -- ??
+ansible all -i 192.168.33.11,  -m reboot -u vagrant --key-file=login.pem -b
