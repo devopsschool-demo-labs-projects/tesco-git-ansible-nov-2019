@@ -1,1 +1,6 @@
 
+ansible localhost -m group -a "name=deploy_Uday"
+ansible localhost -m user -a 'name=deploy-user_Uday group=deploy shell="/bin/bash"'
+ansible localhost -m yum -a "name=httpd"
+ansible localhost -m service  -a"name=httpd state=started"
+ansible localhost -m yum -a"name=git" ansible localhost -m yum -a"name=wget" 
