@@ -6,3 +6,6 @@ ansible localhost -m file  -a'path=/var/www/html/index.html state=touch'
 ansible localhost -m blockinfile  -a'path=/var/www/html/index.html state=present block="Welcome"'
 ansible 192.168.56.101 -m reboot -a msg="Reboot by Ansible"
 
+sudo vi /etc/ansible/ansible.cfg
+
+ansible all -i 192.168.56.101, -m reboot -u common -k -K -b
