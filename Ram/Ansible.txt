@@ -9,3 +9,10 @@ ansible 192.168.56.101 -m reboot -a msg="Reboot by Ansible"
 sudo vi /etc/ansible/ansible.cfg
 
 ansible all -i 192.168.56.101, -m reboot -u common -k -K -b
+
+
+- name: This is to create group
+  hosts: web
+  tasks:
+  - name: create group
+    group: name="Deploy"
