@@ -6,3 +6,13 @@
     yum: name=httpd state=present
   - name: Starting service
     service: name=httpd state=started enabled=yes
+
+
+---
+- name: This creates deploy group
+  hosts: web
+  tasks:
+  - name: Group deploy
+    group: name=deploy
+    
+    
