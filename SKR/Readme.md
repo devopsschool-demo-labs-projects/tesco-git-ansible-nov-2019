@@ -13,3 +13,6 @@ https://www.devopsschool.com/blog/ansible-adhoc-commands-lab-excercise-part-1/
 - ansible localhost -m file -a 'path="/opt/test.txt" state=touch'
 - ansible localhost -m file -a 'path="/opt/test.txt" state=absent'
 - ansible localhost -m reboot # Cannot kill yourself.
+
+
+- ansible all -i 172.42.42.102, -m yum -a 'name=wget' -u vagrant --private-key login.pem -b
