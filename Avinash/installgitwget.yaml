@@ -3,6 +3,8 @@
   hosts: RS,ansibleserver
   tasks:
   - name: install git
-    package: name=git state=present
-  - name: install wget
-    package: name=wget state=present
+    package:
+     name:
+      - git
+      - wget
+     state: present
