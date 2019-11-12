@@ -4,3 +4,5 @@ nsible localhost -m yum -a"name=httpd state=installed"
 ansible localhost -m service  -a"name=httpd state=started"
 ansible localhost -m file  -a'path=/var/www/html/index.html state=touch'
 ansible localhost -m blockinfile  -a'path=/var/www/html/index.html state=present block="Welcome"'
+ansible 192.168.56.101 -m reboot -a msg="Reboot by Ansible"
+
