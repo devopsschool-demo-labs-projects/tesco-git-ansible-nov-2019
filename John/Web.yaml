@@ -1,0 +1,16 @@
+---
+- name: This sets up an httpd webserver
+  hosts: web
+  tasks:
+  - name: Adding a group
+    group: name=deploy
+  - name: Adding user to the group
+    user: name="deploy-user" group=deploy shell="/bin/bash"
+  - name: Install the httpd apps
+    yum: name=httpd
+  - name: start the httpd service
+    service: name=httpd state=started
+  - name: create a empty fle
+    file: dest=/opt/test.txt state=touch
+  - name: copy a file
+    copy: dest=/var/www/html/ src="/home/common/index.html"
