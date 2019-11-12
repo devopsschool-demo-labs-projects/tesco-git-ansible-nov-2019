@@ -4,3 +4,14 @@ ansible localhost -m yum -a"name=httpd state=installed"
 ansible localhost -m service  -a"name=httpd state=started"
 ansible localhost -m file  -a'path=/var/www/html/index.html state=touch'
 ansible localhost -m blockinfile  -a'path=/var/www/html/index.html state=present block="WEEE"'
+
+
+ansible -i 192.168.56.220, -m yum -a"name=httpd state=installed" -- will not work 
+ansible -i 192.168.56.220, -m yum -a"name=httpd state=installed" -- will not work  group name required
+ansible all -i 192.168.56.220, -m yum -a"name=httpd state=installed"
+
+ansible all -i 192.168.56.220,192.168.56.221, -m yum -a"name=httpd state=installed"
+ansible all -i 192.168.56.220,192.168.56.221, -m yum -m service  -a"name=httpd state=started" 
+
+ansible all -i 192.168.56.221, -m yum -m firewalld -a"service=http permanent=yes state=enabled" 
+
