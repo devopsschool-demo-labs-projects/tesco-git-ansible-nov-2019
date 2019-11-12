@@ -23,3 +23,6 @@ https://www.devopsschool.com/blog/ansible-adhoc-commands-lab-excercise-part-1/
     "elapsed": 19,
     "rebooted": true
 }
+
+
+ansible all -i inventory -m yum -a "name=wget state=installed" -u vagrant --private-key login.pem -b
