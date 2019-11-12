@@ -1,5 +1,26 @@
-ansible localhost -m"group" -a"name=deploy"
+63  ansible localhost -m"group" -a"name=deploy"
+   64  more /etc/group |grep deploy
+   65  more /etc/passwd |grep deploy-user
+   66  ansible localhost -m"user" -a='name="deploy-user" group="deploy" shell="/bin/bash"'
+   67  ansible localhost -m"user" -a'name="deploy-user" group="deploy" shell="/bin/bash"'
+   68  more /etc/passwd |grep deploy-user
+   69  which httpd
+   70  ansible localhost -m"pkg" -a"name=httpd state=installed"
+   71  ansible localhost -m"yum" -a"name=httpd state=installed"
+   72  which httpd
+   73  ansible localhost -m"service" -a"name=httpd state=started enabled=yes"
+   74  ps -eaf |grep httpd
+   75  ansible localhost -m"file" -a'name="index.html" path="/var/www/html state=touch'
+   76  ansible localhost -m"file" -a'name="index.html" path="/var/www/html" state=touch'
+   77  ansible localhost -m"blockinfile" -a'name="index.html" path="/var/www/html" block="Hi this is John file"'
+   78  touch "/var/www/second.html"
+   79  ansible localhost -m"copy" -a'src="/var/www/second.html" dest="/var/www/html/second.html"'
+   80  ls -la /var/www/html
+   81  ansible module -m"yum" -a"name=git state=present"
+   82  ansible localhost -m"yum" -a"name=git state=present"
+   83  which git
+   84  ansible localhost -m"yum" -a"name="{{ packages }}" vars="wget,"httpd-tools" state=present"
+"
+   85  ansible localhost -m"reboot" -a'msg="Reboot initiated by Ansible King" reboot_timeout=3600'
 
-
-ansible localhost -m"user" -a 'name="deploy-user" group="deploy" shell="/bin/bash"'
 
