@@ -1,0 +1,8 @@
+---
+- name: Installing git, wget packages
+  hosts: web1
+  tasks:
+  - name: Installing git
+    yum: name=git
+  - name: Installing wget
+    yum: name=wget
