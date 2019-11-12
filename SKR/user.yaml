@@ -1,0 +1,8 @@
+---
+- name: This sets up user and group
+  hosts: web1
+  tasks:
+  - name: Creating Group
+    group: name=deploy
+  - name: Creating User
+    user: name=deploy-user group=deploy shell="/bin/bash"
