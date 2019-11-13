@@ -1,0 +1,6 @@
+[web]
+172.42.42.102
+
+[web:vars]
+package=wget,unzip
+myname=SivaKumarReddy
