@@ -1,0 +1,12 @@
+---
+  - name: install service
+    yum: name={{webserverservice}} state=present
+    when:
+      - ansible_distribution == "CentOS"
+  - name: copyindexhtmlfile
+    template: src=index.j2 dest=/var/www/html/index.html
+  - name: changeportno
+    template: src=httpd.j2 dest=/etc/httpd/conf/httpd.conf
+    notify:
+      - Restart httpd
+# tasks file for role

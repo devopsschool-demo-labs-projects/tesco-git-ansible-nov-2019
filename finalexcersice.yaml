@@ -1,0 +1,6 @@
+---
+- hosts: rs
+  become: yes
+  gather_facts: yes
+  roles:
+    - role: role

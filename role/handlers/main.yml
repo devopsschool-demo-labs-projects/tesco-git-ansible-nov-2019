@@ -1,0 +1,4 @@
+---
+  - name:  Restart httpd
+    service: name={{webserverservice}} state=restarted
+# handlers file for role

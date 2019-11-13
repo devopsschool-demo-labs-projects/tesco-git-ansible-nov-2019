@@ -1,0 +1,5 @@
+---
+myname: "Avinash Chava"
+webserverservice: "httpd"
+webserverportno: 8080
+# vars file for role
