@@ -1,0 +1,43 @@
+- name: This sets up an httpd webserver
+  hosts: web
+  vars:
+    myname: "Asrar in playbook"
+    package: "httpd"
+    service: "httpd"
+  tasks:
+    - name: Install the httpd apps
+      yum: name={{ package }}
+    - name: start the httpd service
+      service: name={{ service }} state=started
+    - name: create a empty fle
+      file: dest=/opt/test.txt state=touch
+    - debug:
+        msg: My Name is  {{ myname }}
+~                                       
+
+- name: This sets up an httpd webserver
+  hosts: web
+  vars_files:
+    - "vars.yaml"
+  tasks:
+    - name: Install the httpd apps
+      yum: name={{ package }}
+    - name: start the httpd service
+      service: name={{ service }} state=started
+    - name: create a empty fle
+      file: dest=/opt/test.txt state=touch
+    - debug:
+        msg: My Name is  {{ myname }}
+        
+        
+[web]
+192.168.33.11 ansible_user=vagrant ansible_ssh_private_key_file=login.pem ansible_become=yes
+
+[web]
+192.168.33.11 
+
+[web:vars]
+ansible_user=vagrant
+ansible_ssh_private_key_file=login.pem 
+ansible_become=yes
+myname= Asrarrrrrrr
