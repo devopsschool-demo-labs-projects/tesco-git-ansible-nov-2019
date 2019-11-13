@@ -1,0 +1,10 @@
+---
+- name: Installing packages
+  hosts: web
+  vars:
+    package: wget,unzip
+  tasks:
+  - name:
+    yum: name={{ package }}
+ 
+ 
