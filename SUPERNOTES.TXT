@@ -724,4 +724,7 @@ https://github.com/devops-school/ansible-hello-world-role
 
 https://github.com/devopsschool-sample-projects/ansible-hello-world-2.9
 
-Projhect - https://www.devopsschool.com/blog/ansible-role-project-1/
+Project - https://www.devopsschool.com/blog/ansible-role-project-1/
+
+
+
