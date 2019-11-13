@@ -3,8 +3,8 @@
     myname: "chandra"
     package: "httpd"
     service: "httpd"
-    ansible_user: common
+    ansible_user: com
     ansible_become: yes
-    ansible_password: Tesco@123
+    ansible_password: 123
     myname: chandrainv
-    ansible_become_password: Tesco@123
+    ansible_become_password: 123
