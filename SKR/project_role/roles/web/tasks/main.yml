@@ -21,3 +21,11 @@
 
 - name: Copying index.j2 to index.html
   template: src=index.j2 dest=/var/www/html/index.html
+
+- name: Installing defualt pkgs
+  yum: name={{ item }} state=installed
+  with_items:
+    - vim 
+    - ntp
+    - unzip
+    - htop
