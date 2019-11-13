@@ -1,1081 +1,727 @@
-12.30 PM - 8:30 PM 
-1 - LONG BREAK - 2:00 PM - 2.45 PM
-2. 5 PM
-3. 6.30 5PM
------------------------------------------
------------------------------------------
-GIT
-ANSIBLE
-==========================================
-Prod - TescoX
-Mgr - Mgrx
-    ----------------------------------
-    EVERY COMMIT MUST GO TO PRODUCTION
-    QUALITY REDEFINED
-    Cost REDUCTION
-==========================================
-Hiring------
+What is Ansible?
+=========================================
+    Config mgmt tool.
+    FREE
+    FROM REDHAT
+        - Ansible - CMD - FREE - OPEN SOURCE
+        - Ansible Tower - CMD+GUI - PAID
+    Written in PYTHON
+    its a market Leader.
 
-Architect - PLANNING  - JIRA - CONFLUENCE -
-DEV -- 10 MODULE - 10 ENGINEER
-            --------------------------------------
-            DEVOPS - 
-                        A PERSON WHO CAN CODE FOr PROD
-                        A PERSON WHO CAN CODE FOR TESTING A PROD
-                        A PERSON WHO CAN CODE AGAIN BUT INFRA.
-                        --------------DEVOPS GUYS DO EVEythNG---------
+What is Config mgmt?
+    SERVER(S)
 
-CUrR RELASE CYCLE               EXPECtED
-===========================================================================
-15 DAYS                         1 HOUR
-1 WEEK                          1 HOUR
-                        --------------------------------------------------
-                        CODE-TESTING-RELEASE
-============================================================================
-                    MICROSERVICES
-Architect - PLANNING  - JIRA - CONFLUENCE -
-DEV -- 10 MODULE - 10 ENGINEER
-    Code Integ ------> GIT
-    ???????         WHO
-                    WHY
-                    WHERE
-                    WHAT
-    Code Review 
-            PEER Code - github, gerrit
-            Static Code - Sonarqube
-    Build mgmt -MaVEN - gRADLE - MsbUILD
-    UT - Junit - Nunit 
-    Packaging - 
-            SYS
-            APP 
-    Archive Package & repo  - NEXUS - Archiva
-    ======================================================
-    Deployment 2
-                    QA
-                    UAT
-                    PP
-                    PROD
-    TescoX.45.6 --> 100 BOXES
-    -----------------------------
-    - 50 W - 50 L
-    - 50 NGX - 50 APA
-    - 25 tom - 25 wl - 25 ws - 25 jbos
-    - 25 mysql - 25 ora - 25 ps - 25 ms
-    ---- 100 diff
-    =====================================
-    1 dep - 9 MINS?????
-    100 dEP? - 9 MINS?
-    ----------------------------
-    1 SEC - Container - Docker - Kubernmetes
+What is there in SERVER? AKA Resources 
 
-        -------------------------
-        how?
-                Parrell Dep
-    Programmng - 
-                ANSIBLE
-                PUPPET
-                CHEF
-                SALT
-                CFENGine
-                SCCm
-    GUI 
-                Octopus Deploy
-                Udeploy
+Ansible ---- HARDWARE(HYPERVIOSR)
+        CPU 
+        RAM
+         HDD
+SOFTWARE                    PROPERTY                ACTION
+    Package                                         I R U
+    FILE                       X                    C D 
+    DIR
+    Services                    X                      S T E D                         
+    Bash
+    PS
+PEOPLE
+    User
+    GROUPS
+PROCESS
+    Policy
+    Permissions
 
-================================================
-AT 
-===============================================
-Code Coverage -- Test Coverage  
-                    JACOCO - NOCVER - COBERTURA
-============================================================================
-INTEGRATE WITH ALL
-SCHEDULING
-FEEDBACK
-DASHBOARD
-------------------------------------------------------------------------------------
-                            JENKINS
+WHY ANSIBLE?
+    EASY TO 
+        - Learn
+        - READ
+        - WRITE
+        - TEST
+        - DEBUG
+        - SHare
+        - EXTEND
+    Compare to JAVA, CPP, PErL, PYTHON
+
+    IDEOMPOTENT
+    10 Tasks ---> 1 min --> 10 mins
+    3 TASK --- 3 mins - 3 mins
+============================================
+Role 
+        DEV - A person who write code/test/debug/share with OPS.
+        ADMIN-OPS - A person who manage env - access - ha - and apply a code to SERVERS
+
+Evolution of Programming Lang
+====================
+Compiled Lang --> Intrepreted Lang --> Domain Specific - Decalarative Lang.
+                                                        ---- XML -> JSON -> YAML
+====================
+
+How to become a DEV?
+----------------------------------
+JDK ---> .java -----> .class ---> JAR ------> WAR
+    ---> FUnction
+    ---> Variable
+    ---> Operators
+    ---> Conditiong
+    ---> Loops
+
+Ansible -->.YAML ----> PLAYBOOK ----> ROLE
+    ---> FUnction
+    ---> Variable
+    ---> Operators
+    ---> Conditiong
+    ---> Loops
+
+=======================================================================        
+
+ARCHITECTURE OF ANSIBLE
+===============================
+Ansible Control Server      ------------- Ansible Remote Server(S)
+    - LINUX                                 --  ANY
+    - 64 bit                                -- ANY 
+    LINUX                                   --- LINUX USING SSH
+    LINUX                                   --- WINDOWS using HTTP WINRM
+
+    PYTHON(2.7+)                                  --- LINUX - PYTHON(2.7+)
+                                                  --- WINDOWS - WINRM
+1  MODULE from Ansible INSTALL.
+2. INVENTORY
+3. PLAYBOOK
+4. Config
+=====================================================================
+TRAINING FLOW
+=====================
+	using ADHOC command 
+		Do one task in ONE MACHINE(localhost)
+		Do one task in ONE REMOTE MACHINE
+		Do one task in MULTIPLE REMOTE MACHINES using Inventory
+		Do one task in MULTIPLE REMOTE MACHINES using group in Inventory
+	using Playbook(Program)
+		Do Multiple tasks(Playbook) in ONE MACHINE(localhost)
+		Do Multiple tasks(Playbook) in ONE REMOTE MACHINE
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using Inventory
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using group in Inventory
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using group of group in Inventory
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using environment directory Inventory 
+	using Role(Program)
+		Do One Role in in ONE MACHINE(localhost)
+		Do Multiple Roles in ONE REMOTE MACHINE
+		Do Multiple Roles in MULTIPLE REMOTE MACHINE using Inventory
+		Do Multiple Roles in MULTIPLE REMOTE MACHINE using group in Inventory
+		Do Multiple Roles in MULTIPLE REMOTE MACHINE using group of group in Inventory
+		Do Multiple Roles in MULTIPLE REMOTE MACHINE using environment directory Inventory
+====================
+
+RHEL-7.5_HVM_GA-20180322-x86_64-1-Hourly2-GP2 (ami-5b673c34)
+
+ACS 
+13.235.73.26
+ARS
+15.206.164.40
+
+User Name - ec2-user
+Passowrd - NONE
+KEY - I HAVE IT.
 
 
- PROD
-        Deployment
-        Moniorting
-                    INFRA - 
-                    PERFORCE - 
-                    LOG  - 
-                    SECURity - 
+How to install Ansible in ACS?
 
-https://www.devopsschool.com/path/
-==================================================================
-What is Git?    
-        Version Control system
-        ---- 
-            WHO 
-            WHAT 
-            WHERE
-            WHY
+How to install Ansible?
+$ sudo yum install wget -y
+$ wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+$ yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+$ sudo rpm -i epel-release-latest-7.noarch.rpm
+$ sudo yum update -y 
+$ sudo yum install ansible -y
+########
+$ systemctl stop firewalld
+$ systemctl disable firewalld
 
-        Distributed Source Code mgmt tool
-        -----------
+[root@ip-172-31-7-122 ec2-user]# ansible --version
+ansible 2.9.0
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/sha                       re/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /bin/ansible
+  python version = 2.7.5 (default, Feb 20 2018, 09:19:12) [GCC 4.8.5 20150623 (R                       ed Hat 4.8.5-28)]
+[root@ip-172-31-7-122 ec2-user]# ansible -h
+usage: ansible [-h] [--version] [-v] [-b] [--become-method BECOME_METHOD]
+               [--become-user BECOME_USER] [-K] [-i INVENTORY] [--list-hosts]
+               [-l SUBSET] [-P POLL_INTERVAL] [-B SECONDS] [-o] [-t TREE] [-k]
+               [--private-key PRIVATE_KEY_FILE] [-u REMOTE_USER]
+               [-c CONNECTION] [-T TIMEOUT]
+               [--ssh-common-args SSH_COMMON_ARGS]
+               [--sftp-extra-args SFTP_EXTRA_ARGS]
+               [--scp-extra-args SCP_EXTRA_ARGS]
+               [--ssh-extra-args SSH_EXTRA_ARGS] [-C] [--syntax-check] [-D]
+               [-e EXTRA_VARS] [--vault-id VAULT_IDS]
+               [--ask-vault-pass | --vault-password-file VAULT_PASSWORD_FILES]
+               [-f FORKS] [-M MODULE_PATH] [--playbook-dir BASEDIR]
+               [-a MODULE_ARGS] [-m MODULE_NAME]
+               pattern
 
-        FREE
-        Open Source
-        Dev by Linus Tovald
+Define and run a single task 'playbook' against a set of hosts
 
-Why We need git?
-    To store a changes in FILES
-                    ---- Source Code
-    If you want to work from REMOTE ISLEND with ANY SORT OF NETWORK
+positional arguments:
+  pattern               host pattern
 
-Other tool - 
-RCS -> CVS --> SVN - > GIT
-Harvest -> CC -> VSS -> Mercury -> P4 - > TFS
-=================================================
-What makes GIT diff from other.....
-        Distributed
+optional arguments:
+  --ask-vault-pass      ask for vault password
+  --list-hosts          outputs a list of matching hosts; does not execute
+                        anything else
+  --playbook-dir BASEDIR
+                        Since this tool does not use playbooks, use this as a
+                        substitute playbook directory.This sets the relative
+                        path for many features including roles/ group_vars/
+                        etc.
+  --syntax-check        perform a syntax check on the playbook, but do not
+                        execute it
+  --vault-id VAULT_IDS  the vault identity to use
+  --vault-password-file VAULT_PASSWORD_FILES
+                        vault password file
+  --version             show program's version number, config file location,
+                        configured module search path, module location,
+                        executable location and exit
+  -B SECONDS, --background SECONDS
+                        run asynchronously, failing after X seconds
+                        (default=N/A)
+  -C, --check           don't make any changes; instead, try to predict some
+                        of the changes that may occur
+  -D, --diff            when changing (small) files and templates, show the
+                        differences in those files; works great with --check
+  -M MODULE_PATH, --module-path MODULE_PATH
+                        prepend colon-separated path(s) to module library (def
+                        ault=~/.ansible/plugins/modules:/usr/share/ansible/plu
+                        gins/modules)
+  -P POLL_INTERVAL, --poll POLL_INTERVAL
+                        set the poll interval if using -B (default=15)
+  -a MODULE_ARGS, --args MODULE_ARGS
+                        module arguments
+  -e EXTRA_VARS, --extra-vars EXTRA_VARS
+                        set additional variables as key=value or YAML/JSON, if
+                        filename prepend with @
+  -f FORKS, --forks FORKS
+                        specify number of parallel processes to use
+                        (default=5)
+  -h, --help            show this help message and exit
+  -i INVENTORY, --inventory INVENTORY, --inventory-file INVENTORY
+                        specify inventory host path or comma separated host
+                        list. --inventory-file is deprecated
+  -l SUBSET, --limit SUBSET
+                        further limit selected hosts to an additional pattern
+  -m MODULE_NAME, --module-name MODULE_NAME
+                        module name to execute (default=command)
+  -o, --one-line        condense output
+  -t TREE, --tree TREE  log output to this directory
+  -v, --verbose         verbose mode (-vvv for more, -vvvv to enable
+                        connection debugging)
 
-ALL TOOLS are based Open    
-=============== SERVER - CLIENT MODel
+Privilege Escalation Options:
+  control how and which user you become as on target hosts
 
-GIT - 
-===============  Distributed
+  --become-method BECOME_METHOD
+                        privilege escalation method to use (default=sudo), use
+                        `ansible-doc -t become -l` to list valid choices.
+  --become-user BECOME_USER
+                        run operations as this user (default=root)
+  -K, --ask-become-pass
+                        ask for privilege escalation password
+  -b, --become          run operations with become (does not imply password
+                        prompting)
 
-===============================================================
-How to install git?
-    Linux 
-        apt-get install git
-        yum install git
-    Windows
-        exe from git-scm.com
-                using git bash 
-        GUI
-            SourceTree
-            TortiseGit
+Connection Options:
+  control as whom and how to connect to hosts
 
-    Mac - DMG from git-scm.com
+  --private-key PRIVATE_KEY_FILE, --key-file PRIVATE_KEY_FILE
+                        use this file to authenticate the connection
+  --scp-extra-args SCP_EXTRA_ARGS
+                        specify extra arguments to pass to scp only (e.g. -l)
+  --sftp-extra-args SFTP_EXTRA_ARGS
+                        specify extra arguments to pass to sftp only (e.g. -f,
+                        -l)
+  --ssh-common-args SSH_COMMON_ARGS
+                        specify common arguments to pass to sftp/scp/ssh (e.g.
+                        ProxyCommand)
+  --ssh-extra-args SSH_EXTRA_ARGS
+                        specify extra arguments to pass to ssh only (e.g. -R)
+  -T TIMEOUT, --timeout TIMEOUT
+                        override the connection timeout in seconds
+                        (default=10)
+  -c CONNECTION, --connection CONNECTION
+                        connection type to use (default=smart)
+  -k, --ask-pass        ask for connection password
+  -u REMOTE_USER, --user REMOTE_USER
+                        connect as this user (default=None)
 
+Some modules do not make sense in Ad-Hoc (include, meta, etc)
+[root@ip-172-31-7-122 ec2-user]#
+
+===================================================
+===================================================
+Project - Setup a webserver.
+
+Psucode - 
+1. Install httpd app
+2. start httpd Server
+3. Create a index.html with "Welcome to Ansible Class"
+4. Copy index.html into webserver /var/www/html
+---------------------------------------------------
+ansible module for
+----------------------------------------------------
+All Modules - https://docs.ansible.com/ansible/latest/modules/list_of_all_modules.html
+
+	using ADHOC command 
+		Do one task in ONE MACHINE(localhost)
+
+ansible localhost -m yum -a"name=httpd state=installed"
+ansible localhost -m service  -a"name=httpd state=started"
+ansible localhost -m file  -a'path=/var/www/html/index.html state=touch'
+ansible localhost -m blockinfile  -a'path=/var/www/html/index.html state=present block="WEEE"'
+ 
+
+EXCERCISE - 1- 
+https://www.devopsschool.com/blog/ansible-adhoc-commands-lab-excercise-part-1/
+15 mins.
+
+
+============================================================
+	using ADHOC command 
+		Do one task in ONE REMOTE MACHINE
+============================================================
+
+ACS 
+13.235.73.26
+ARS
+15.206.164.40
+
+Ansible command is divided into 3 part  
+    - optional arguments
+    - Connection Options
+    - Privilege Escalation Options
+
+ansible localhost -m yum -a"name=httpd state=installed"
+ - Remote servers MUST be in form of LIST
+            - CAN BE SPECIFY ON CMD LINE.
+            - CAN BE IN FILE 
+            - CAN BE SCRIPT
+
+ansible -i 15.206.164.40 -m yum -a"name=httpd state=installed"
+ansible -i 15.206.164.40, -m yum -a"name=httpd state=installed"
+ansible all -i 15.206.164.40, -m yum -a"name=httpd state=installed"
+
+ansible all -i 15.206.164.40,13.235.73.26, -m yum -a"name=httpd state=installed" -u ec2-user --key-file=remote.pem -b
+ansible all -i 15.206.164.40,13.235.73.26, -m yum -m service  -a"name=httpd state=started"  -u ec2-user --key-file=remote.pem -b
+
+
+BUILTIN GROUP
+    - all
+    - nogroup
+
+ansible all -i 15.206.164.40,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26,13.235.73.26, -m yum -a"name=httpd state=installed" -u ec2-user --key-file=remote.pem -b
+ansible all -i 15.206.164.40,13.235.73.26, -m yum -m service  -a"name=httpd state=started"  -u ec2-user --key-file=remote.pem -b
+
+Solution
+=================
+Inventory
+
+15.206.164.40
+13.235.73.26
+
+ansible all -i inventory -m yum -a"name=httpd state=installed" -u ec2-user --key-file=remote.pem -b
+ansible all -i inventory -m yum -m service  -a"name=httpd state=started"  -u ec2-user --key-file=remote.pem -b
+
+============================================
+Inventory
+
+[web]
+15.206.164.40
+13.235.73.26
+
+[db]
+13.235.73.26
+13.235.73.26
+
+[windows]
+13.235.73.26
+13.235.73.26
+13.235.73.26
+13.235.73.26
+13.235.73.26
+
+[linux]
+13.235.73.26
+13.235.73.26
+13.235.73.26
+13.235.73.26
+13.35.73.26
+13.235.73.26
+13.235.73.26
+13.235.73.26
+
+ansible web -i inventory1 -m yum -a"name=httpd state=installed" -u ec2-user --key-file=remote.pem -b
+ansible web -i inventory1 -m yum -m service  -a"name=httpd state=started"  -u ec2-user --key-file=remote.pem -b
+
+============================================
+Inventory
+
+[web]
+15.206.164.40
+
+[web1]
+13.235.73.26
+
+[gog:children]
+web
+web1
+
+[db]
+13.235.73.26
+13.235.73.26
+
+[windows]
+13.235.73.26
+13.235.73.26
+13.235.73.26
+13.235.73.26
+13.235.73.26
+
+[linux]
+13.235.73.26
+13.235.73.26
+13.235.73.26
+13.235.73.26
+13.35.73.26
+13.235.73.26
+13.235.73.26
+13.235.73.26
+
+ansible gog -i inventory2 -m yum -a"name=httpd state=installed" -u ec2-user --key-file=remote.pem -b
+ansible gog -i inventory2 -m yum -m service  -a"name=httpd state=started"  -u ec2-user --key-file=remote.pem -b
+=================================================================
+What is Playbook?
+    Collection of PLAY.
+
+What is PLAY?
+    Play has Tasks
+    hosts
+
+	using Playbook(Program)
+		Do Multiple tasks(Playbook) in ONE MACHINE(localhost)
+		Do Multiple tasks(Playbook) in ONE REMOTE MACHINE
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using Inventory
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using group in Inventory
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using group of group in Inventory
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using environment directory Inventory 
+
+
+---
+- name: This sets up an httpd webserver
+  hosts: web
+  tasks:
+  - name: Install the httpd apps
+    yum: name=httpd
+  - name: start the httpd service
+    service: name=httpd state=started
+  - name: create a empty fle
+    file: dest=/opt/test.txt state=touch
+  - name: copy a file
+    copy: dest=/var/www/html/ src="/home/ec2-user/index.html"
+
+ansible-playbook -i inventory2 web.yaml -u ec2-user --key-file=remote.pem -b
+
+Excericise  -2 
+https://www.devopsschool.com/blog/ansible-playbook-lab-excercise-part-2/
+
+ ansible-playbook -i inventory2 web.yaml -u ec2-user --key-file=remote.pem -b
+ =================================================================================
+ =================================================================================
+13.232.94.198
+52.66.83.204
+
+
+=========================================
+Variables - https://www.devopsschool.com/tutorial/ansible/variables/index.html
+
+- Variables - 22 PLACES
+    - Playbook
+    - Inventory
+
+- templates
+- Conditioning
+- Looping
+
+=========================================
+Variables in Playbook
+=========================================
+---
+- name: This sets up an httpd webserver
+  hosts: web
+  vars:
+    myname: "rajesh kumar in playbook"
+    package: "httpd"
+    service: "httpd"
+
+  tasks:
+  - name: Install the httpd apps
+    yum: name={{ package }}
+  - name: start the httpd service
+    service: name={{ service }} state=started
+  - name: create a empty fle
+    file: dest=/opt/test.txt state=touch
+  - name: copy a file
+    copy: dest=/var/www/html/ src="/home/ec2-user/index.html"
+  - debug:
+      msg: My Name is  {{ myname }}
+
+
+    ansible-playbook -i inventory web.yaml -u ec2-user --key-file=remote.pem -b
+
+    =========================================
+    Ansible BEHAVIORAL PARAMETERS
+    https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#connecting-to-hosts-behavioral-inventory-parameters
+
+----------inventory--------------------------
+[web]
+13.232.94.198 ansible_connection=local
+52.66.83.204 ansible_user=ec2-user ansible_ssh_private_key_file=remote.pem ansible_become=yes
+
+[db]
+13.232.94.144 ansible_password=desadasdas ansible_user=user ansible_become_user=buser ansible_become_passwor=fdsf
+52.66.83.244
+
+----------inventory--------------------------
+[web]
+13.232.94.198 ansible_connection=local myname=rjaehskumarinhost
+52.66.83.204 
+
+[db]
+13.232.94.144 ansible_password=desadasdas ansible_user=user ansible_become_user=buser ansible_become_passwor=fdsf
+52.66.83.244
+
+[web:vars]
+ansible_user=ec2-user
+ansible_ssh_private_key_file=remote.pem 
+ansible_become=yes
+myname=rjaehskumarininventory
+
+====================================================================
+---
+- name: This sets up an httpd webserver
+  hosts: web
+  vars_files:
+    - "vars.yaml"
+
+  tasks:
+  - name: Install the httpd apps
+    yum: name={{ package }}
+  - name: start the httpd service
+    service: name={{ service }} state=started
+  - name: create a empty fle
+    file: dest=/opt/test.txt state=touch
+  - name: copy a file
+    copy: dest=/var/www/html/ src="/home/ec2-user/index.html"
+  - debug:
+      msg: My Name is  {{ myname }}
+
+
+vars.yaml
+-------------
+myname: "rajesh kumar in playbook"
+package: "httpd"
+service: "httpd"
+
+=============================================
+Fact variable && Conditioning.
+======================================
+100
+
+facter
+-------------------
+    Fetch all info of SYSTEM
+
+Ansible uses Facter tool to get fact info about a server using a module called
+            ---- setup
+
+
+Conditioning 
+http://devopsschool.com/tutorial/ansible/ansible-conditional-programming-playbooks.html
+
+
+
+       when:
+          - ansible_distribution == "RedHat"
+          - ansible_distribution_major_version == "7.5"
+
+---
+- name: This sets up an httpd webserver
+  hosts: web
+  vars_files:
+    - "vars.yaml"
+
+  tasks:
+  - name: Install the httpd apps
+    yum: name={{ package }}
+  - name: start the httpd service
+    service: name={{ service }} state=started
+  - name: create a empty fle
+    file: dest=/opt/test.txt state=touch
+  - name: copy a file
+    copy: dest=/var/www/html/ src="/home/ec2-user/index.html"
+    when:
+      - ansible_distribution == "RedHat"
+      - ansible_distribution_major_version == "7"
+  - debug:
+      msg: My Name is  {{ myname }}
+    when:
+      - ansible_distribution == "RedHat"
+      - ansible_distribution_major_version == "7"
+===================================================================
+Looping in Ansible
+======================================
+https://www.devopsschool.com/tutorial/ansible/ansible/ansible-looping-programming-playbooks.html
+
+---
+- name: This sets up an httpd webserver
+  hosts: localhost
+  become: yes
+
+  tasks:
+  - name: Install common software requirements
+    yum: pkg={{ item }} state=installed
+    with_items:
+      - git
+      - ntp
+      - httpd
+
+============
+ALL PLAYBOOK Options
+https://www.devopsschool.com/blog/anatomy-of-ansible-play-defined/
+=================
+
+=================================
+var = value
+
+debug
+    msg string  "csdsfd fds fsd f {{ var }}"
+                'csds""fd fds fsd f ""{{ var }}'
+    var string
+
+==================
+cmd copy to src to dest....
+
+
+---
+- name: This sets up an httpd webserver
+  hosts: localhost
+  become: yes
+
+  tasks:
+  - name: Install common software requirements
+    command: find
+    with_items:
+      - git
+      - ntp
+      - httpd
+
+
+# Example 1
+- hosts: all
+  tasks:
+  - name: Ansible register variable basic example
+    shell: "find *.txt"
+    args:
+      chdir: /test
+    register: find_output
+  - name: example copying file with owner and permissions
+    copy:
+      src: find_output
+      dest: /tmp/test.sh
+      mode: 0644
+
+{{ find_output }}
+find_output[0]
+find_output[key]
 ========================================================
-Git Basic Workflow
-==========================================
-Step 1 - Go to Empty dir and create a repo.. 
-$ git init
+Template ----->
+            src                         dest
+copy -----> index.html ----------->   index.html
+        -----------------
+        {{ name }}
+============================
+1. Any file which need to interroplated - must be .j2
+2. Module - Template
+https://www.devopsschool.com/tutorial/ansible/ansible-playbook-template.html
 
-Step 2 - Create a file which you want to version.
-                --- SAME PLACE WHErE YOU HAVE .git
-                ---- WE CALL IT "WORKSAPCE"
+  - name: Copy Site Files
+    template: src=templates/index.j2 dest={{ doc_root }}/index.html
+	notify:
+      - Restart Apache
 
-Step 3 - Adding a file to repo.....[[[[ADDING A FROM FROM WORKSAPCE TO STAGING]]]]
+---
+- name: This sets up an httpd webserver
+  hosts: localhost
+  become: yes
+  vars:
+    sitename: devopsschool
 
-ONE TIME -----
----------------------------------------
-git config user.name "Rajesh Kumar"
-git config user.email "rajesh@scmgalaxy.com"
-git config --list
+  tasks:
+  - name: Install common software requirements
+    yum: pkg={{ item }} state=installed
+    with_items:
+      - git
+      - ntp
+      - httpd
+  - name: Copy Site Files
+    template: src=index.j2 dest=/var/www/html/index.html
 
+=======================================
+BEST PRACTICES
+=======================================================
+Variables
+Tasks
+Template
+Handlers
+=========================
+    Roles
+===================================================
+Programmer
+    --20-30 PLAYBOOKS --- SO MANY Tasks
+    -- 100X variable
+    -- templates
+    -- files
+    -- Handlers
+----------------------------------
+Role 1  - WIll pLay this
+        variable
+        templates
+        files
+        handlers
+Role 2 - WIll pLay this
+        variable
+        templates
+        files
+        handlers
 
-Step 4 - Commit a file to repo [[[[COMMITING A FROM FROM STAGNG TO REPO]]]]
-
-Step 5 - View a file
-Step 6 - View a file
-
-WHO MODIFIED
-WHAT MODIFICATioN
-WHERE ?
-WHY MODIFY
-WHEN ?
-
-
-
-     35  mkdir git-tesco
-   36  cd git-tesco/
-   37  clear
-   38  pwd
-   39  mkdir git1
-   40  ls
-   41  cd git1
-   42  start .
-   43  git init
-   44  clear
-   45  ls
-   46  ls -la
-   47  pwd
-   48  touch file1.txt
-   49  start .
-   50  touch file2.txt
-   51  git add file1.txt
-   52  git config user.name "Rajesh Kumar"
-   53  git config user.email "rajesh@scmgalaxy.com"
-   54  clear
-   55  git config --list
-   56  git commit -m"First commit"
-   57  clear
-   58  git log
-   59  git show 23527634d8678548306d9d9809a932a71e0f6aac
-   60  history
-
-http://bit.ly/2Q64AhS
-
-Rajesh Kumar@DESKTOP-6KRAAR8 MINGW64 /e/git-tesco/git1 (master)
-$ git log
-commit 23527634d8678548306d9d9809a932a71e0f6aac (HEAD -> master)
-Author: Rajesh Kumar <rajesh@scmgalaxy.com>
-Date:   Mon Nov 11 15:40:36 2019 +0530
-
-    First commit
-
-Rajesh Kumar@DESKTOP-6KRAAR8 MINGW64 /e/git-tesco/git1 (master)
-$
-
-23527634d8678548306d9d9809a932a71e0f6aac 
-commit-id AKA checksum AKS hash
-            GENERATED By SHA1
-
-  61  clear
-   62  git log
-   63  start .
-   64  git status
-   65  touch file3.txt
-   66  touch file34.txt
-   67  git status
-   68  git add file2.txt
-   69  git status
-   70  git commit -m"addong file2"
-   71  git status
-   72  ls
-   73  history
-==============================================================
-==============================================================
-How to add mulitple file
-how to add directoru
-How to commit selected FILES
-how to rename it?
-how to copy from one to another?
-How to move a file from one place to another?
-How to edit file?
+Role 3 - WIll pLay this
+        variable
+        templates
+        files
+        handlers
+Role 4 - WIll pLay this
+        variable
+        templates
+        files
+        handlers
 
 
- 74  clear
-   75  ls
-   76  git status
-   77  touch file5.txt
-   78  touch file6.txt;touch file7.txt file8.txt
-   79  clear
-   80  ls
-   81  git status
-   82  git add .
-   83  git status
-   84  git commit -m
-   85  clear
-   86  git commit -m"adding all"
-   87  git status
-   88  touch file9.txt file10.txt
-   89  git status
-   90  git add  .
-   91  git commit -m"adding" file9.txt
-   92  git status
-   93  clear
-   94  ls
-   95  clear
-   96  mkdir src
-   97  git status
-   98  touch src/file.txt
-   99  git status
-  100  git add .;git commit -m"adding dir"
-  101  git status
-  102  ls
-  103  clear
-  104  ls
-  105  git mv file1.txt file11.txt
-  106  git status
-  107  git commit -m"rename"
-  108  ls
-  109  git mv file10.txt src/file10.txt
-  110  git status
-  111  git commit -m"moving "
-  112  git status
-  113  clear
-  114  ls
-  115  vi file11.txt
-  116  git status
-  117  git add /
-  118  git add .
-  119  git status
-  120  git commit -m"adding"
-  121  history
 ==================================================
-How to delete a file?
-
-122  clear
-  123  ls
-  124  git log
-  125  clear
-  126  git log --oneline
-  127  clear
-  128  start .
-  129  git log --oneline
-  130  pwd
-  131  ls
-  132  git status
-  133  clear
-  134  git status
-  135  git log --oneline
-  136  ls
-  137  git rm file2.txt
-  138  git status
-  139  ls
-  140  git commit -m"adding"
-  141  git status
-  142  ls
-  143  git log --oneline
-  144  ls
-  145  git checkout 1a9c62f
-  146  ls
-  147  git checkout 2352763
-  148  ls
-  149  git stayus
-  150  git status
-  151  git checkout ed2a5b9
-  152  git checkout master
-  153  git checkout ed2a5b9
-  154  clear
-  155  ls
-  156  git checkout master
-  157  clear
-  158  ls
-  159  git log --oneline
-  160  git show 1a9c62f
-  161  history
-
-
-
-
-
-How to do undo?
-==========================================
- 162  clear
-  163  git status
-  164  touch clean.txt
-  165  git status
-  166  git clean -f
-  167  git status
-  168  CLEAR
-  169  touch reset.txt
-  170  git status
-  171  git add .
-  172  git status
-  173  git reset reset.txt
-  174  git status
-  175  clear
-  176  git clean -f
-  177  touch revert.txt
-  178  git status
-  179  git add .
-  180  git status
-  181  git commit -m"adding"
-  182  git status
-  183  touch good.txt;git add .;git commit -m
-  184  touch good.txt;git add .;git commit -m"good"
-  185  git log --oneline
-  186  touch bad.txt;git add .;git commit -m"
-bad"
-  187  git log --oneline
-  188  git revert ca5b455
-  189  git log --oneline
-  190  git diff 8376ed3 ca5b455
-  191  git diff 8376ed3 961ef68
-  192  history
-
-
-Working Dir ----> Staging ----------> repo
-            ADD             Commit   
-==================================================== 
-RAJESH (REPO)
-                RAMU - Created his own repo.....
-                Reena -- She has no local repo
-
-Repo ----------- Repo
-        SSH
-        HTTP
-    ----------------
-    ---- github
-            Community
-            Enterprise
-    ----gitlab
-    ----bitbucket
-    ----gerrit
-    ----
-
-
-192  history
-  193  git log
-  194  git log --online
-  195  git log --oneline
-  196  pwd
-  197  clear
-  198  ls
-  199  cd ..
-  200  ls
-  201  mkdir meena
-  202  mkdir rami
-  203  clear
-  204  ls
-  205  git rami/
-  206  cd rami
-  207  git init
-  208  clear
-  209  cd ..
-  210  ls
-  211  cd git1/
-  212  clear
-  213  owd
-  214  pwd
-  215  git push https://github.com/devopsschool-lab-exercise/tesco-test.git master
-  216  git log --oneline
-  217  clear
-  218  ls
-  219  cd ..
-  220  ls
-  221  cd rami/
-  222  git pull https://github.com/devopsschool-lab-exercise/tesco-test.git master
-  223  git log --oneline
-  224  clear
-  225  cd ..
-  226  ls
-  227  cd meena/
-  228  git clone https://github.com/devopsschool-lab-exercise/tesco-test.git
-  229  ls
-  230  cd tesco-test/
-  231  git log --oneline
-  232  ls
-  233  history
-
-
-What if i delete a file ---> What would happen and how to get it back?
-Branching and Merging
-
-How to work with multiple People?
-    github
-VS CODE
-How to undo?
-rename ?
-Permanent remove ----
-
-12.30 PM - 8:30 PM 
-1 - LONG BREAK - 2:00 PM - 2.45 PM
-2. 5 PM
-3. 6.30 5PM
------------------------------------------
------------------------------------------
-GIT
-ANSIBLE
-==========================================
-Prod - TescoX
-Mgr - Mgrx
-    ----------------------------------
-    EVERY COMMIT MUST GO TO PRODUCTION
-    QUALITY REDEFINED
-    Cost REDUCTION
-==========================================
-Hiring------
-
-Architect - PLANNING  - JIRA - CONFLUENCE -
-DEV -- 10 MODULE - 10 ENGINEER
-            --------------------------------------
-            DEVOPS - 
-                        A PERSON WHO CAN CODE FOr PROD
-                        A PERSON WHO CAN CODE FOR TESTING A PROD
-                        A PERSON WHO CAN CODE AGAIN BUT INFRA.
-                        --------------DEVOPS GUYS DO EVEythNG---------
-
-CUrR RELASE CYCLE               EXPECtED
-===========================================================================
-15 DAYS                         1 HOUR
-1 WEEK                          1 HOUR
-                        --------------------------------------------------
-                        CODE-TESTING-RELEASE
-============================================================================
-                    MICROSERVICES
-Architect - PLANNING  - JIRA - CONFLUENCE -
-DEV -- 10 MODULE - 10 ENGINEER
-    Code Integ ------> GIT
-    ???????         WHO
-                    WHY
-                    WHERE
-                    WHAT
-    Code Review 
-            PEER Code - github, gerrit
-            Static Code - Sonarqube
-    Build mgmt -MaVEN - gRADLE - MsbUILD
-    UT - Junit - Nunit 
-    Packaging - 
-            SYS
-            APP 
-    Archive Package & repo  - NEXUS - Archiva
-    ======================================================
-    Deployment 2
-                    QA
-                    UAT
-                    PP
-                    PROD
-    TescoX.45.6 --> 100 BOXES
-    -----------------------------
-    - 50 W - 50 L
-    - 50 NGX - 50 APA
-    - 25 tom - 25 wl - 25 ws - 25 jbos
-    - 25 mysql - 25 ora - 25 ps - 25 ms
-    ---- 100 diff
-    =====================================
-    1 dep - 9 MINS?????
-    100 dEP? - 9 MINS?
-    ----------------------------
-    1 SEC - Container - Docker - Kubernmetes
-
-        -------------------------
-        how?
-                Parrell Dep
-    Programmng - 
-                ANSIBLE
-                PUPPET
-                CHEF
-                SALT
-                CFENGine
-                SCCm
-    GUI 
-                Octopus Deploy
-                Udeploy
-
-================================================
-AT 
-===============================================
-Code Coverage -- Test Coverage  
-                    JACOCO - NOCVER - COBERTURA
-============================================================================
-INTEGRATE WITH ALL
-SCHEDULING
-FEEDBACK
-DASHBOARD
-------------------------------------------------------------------------------------
-                            JENKINS
-
-
- PROD
-        Deployment
-        Moniorting
-                    INFRA - 
-                    PERFORCE - 
-                    LOG  - 
-                    SECURity - 
-
-https://www.devopsschool.com/path/
-==================================================================
-What is Git?    
-        Version Control system
-        ---- 
-            WHO 
-            WHAT 
-            WHERE
-            WHY
-
-        Distributed Source Code mgmt tool
-        -----------
-
-        FREE
-        Open Source
-        Dev by Linus Tovald
-
-Why We need git?
-    To store a changes in FILES
-                    ---- Source Code
-    If you want to work from REMOTE ISLEND with ANY SORT OF NETWORK
-
-Other tool - 
-RCS -> CVS --> SVN - > GIT
-Harvest -> CC -> VSS -> Mercury -> P4 - > TFS
-=================================================
-What makes GIT diff from other.....
-        Distributed
-
-ALL TOOLS are based Open    
-=============== SERVER - CLIENT MODel
-
-GIT - 
-===============  Distributed
-
-===============================================================
-How to install git?
-    Linux 
-        apt-get install git
-        yum install git
-    Windows
-        exe from git-scm.com
-                using git bash 
-        GUI
-            SourceTree
-            TortiseGit
-
-    Mac - DMG from git-scm.com
-
-========================================================
-Git Basic Workflow
-==========================================
-Step 1 - Go to Empty dir and create a repo.. 
-$ git init
-
-Step 2 - Create a file which you want to version.
-                --- SAME PLACE WHErE YOU HAVE .git
-                ---- WE CALL IT "WORKSAPCE"
-
-Step 3 - Adding a file to repo.....[[[[ADDING A FROM FROM WORKSAPCE TO STAGING]]]]
-
-ONE TIME -----
----------------------------------------
-git config user.name "Rajesh Kumar"
-git config user.email "rajesh@scmgalaxy.com"
-git config --list
-
-
-Step 4 - Commit a file to repo [[[[COMMITING A FROM FROM STAGNG TO REPO]]]]
-
-Step 5 - View a file
-Step 6 - View a file
-
-WHO MODIFIED
-WHAT MODIFICATioN
-WHERE ?
-WHY MODIFY
-WHEN ?
-
-
-
-     35  mkdir git-tesco
-   36  cd git-tesco/
-   37  clear
-   38  pwd
-   39  mkdir git1
-   40  ls
-   41  cd git1
-   42  start .
-   43  git init
-   44  clear
-   45  ls
-   46  ls -la
-   47  pwd
-   48  touch file1.txt
-   49  start .
-   50  touch file2.txt
-   51  git add file1.txt
-   52  git config user.name "Rajesh Kumar"
-   53  git config user.email "rajesh@scmgalaxy.com"
-   54  clear
-   55  git config --list
-   56  git commit -m"First commit"
-   57  clear
-   58  git log
-   59  git show 23527634d8678548306d9d9809a932a71e0f6aac
-   60  history
-
-http://bit.ly/2Q64AhS
-
-Rajesh Kumar@DESKTOP-6KRAAR8 MINGW64 /e/git-tesco/git1 (master)
-$ git log
-commit 23527634d8678548306d9d9809a932a71e0f6aac (HEAD -> master)
-Author: Rajesh Kumar <rajesh@scmgalaxy.com>
-Date:   Mon Nov 11 15:40:36 2019 +0530
-
-    First commit
-
-Rajesh Kumar@DESKTOP-6KRAAR8 MINGW64 /e/git-tesco/git1 (master)
-$
-
-23527634d8678548306d9d9809a932a71e0f6aac 
-commit-id AKA checksum AKS hash
-            GENERATED By SHA1
-
-  61  clear
-   62  git log
-   63  start .
-   64  git status
-   65  touch file3.txt
-   66  touch file34.txt
-   67  git status
-   68  git add file2.txt
-   69  git status
-   70  git commit -m"addong file2"
-   71  git status
-   72  ls
-   73  history
-==============================================================
-==============================================================
-How to add mulitple file
-how to add directoru
-How to commit selected FILES
-how to rename it?
-how to copy from one to another?
-How to move a file from one place to another?
-How to edit file?
-
-
- 74  clear
-   75  ls
-   76  git status
-   77  touch file5.txt
-   78  touch file6.txt;touch file7.txt file8.txt
-   79  clear
-   80  ls
-   81  git status
-   82  git add .
-   83  git status
-   84  git commit -m
-   85  clear
-   86  git commit -m"adding all"
-   87  git status
-   88  touch file9.txt file10.txt
-   89  git status
-   90  git add  .
-   91  git commit -m"adding" file9.txt
-   92  git status
-   93  clear
-   94  ls
-   95  clear
-   96  mkdir src
-   97  git status
-   98  touch src/file.txt
-   99  git status
-  100  git add .;git commit -m"adding dir"
-  101  git status
-  102  ls
-  103  clear
-  104  ls
-  105  git mv file1.txt file11.txt
-  106  git status
-  107  git commit -m"rename"
-  108  ls
-  109  git mv file10.txt src/file10.txt
-  110  git status
-  111  git commit -m"moving "
-  112  git status
-  113  clear
-  114  ls
-  115  vi file11.txt
-  116  git status
-  117  git add /
-  118  git add .
-  119  git status
-  120  git commit -m"adding"
-  121  history
-==================================================
-How to delete a file?
-
-122  clear
-  123  ls
-  124  git log
-  125  clear
-  126  git log --oneline
-  127  clear
-  128  start .
-  129  git log --oneline
-  130  pwd
-  131  ls
-  132  git status
-  133  clear
-  134  git status
-  135  git log --oneline
-  136  ls
-  137  git rm file2.txt
-  138  git status
-  139  ls
-  140  git commit -m"adding"
-  141  git status
-  142  ls
-  143  git log --oneline
-  144  ls
-  145  git checkout 1a9c62f
-  146  ls
-  147  git checkout 2352763
-  148  ls
-  149  git stayus
-  150  git status
-  151  git checkout ed2a5b9
-  152  git checkout master
-  153  git checkout ed2a5b9
-  154  clear
-  155  ls
-  156  git checkout master
-  157  clear
-  158  ls
-  159  git log --oneline
-  160  git show 1a9c62f
-  161  history
-
-
-
-
-
-How to do undo?
-==========================================
- 162  clear
-  163  git status
-  164  touch clean.txt
-  165  git status
-  166  git clean -f
-  167  git status
-  168  CLEAR
-  169  touch reset.txt
-  170  git status
-  171  git add .
-  172  git status
-  173  git reset reset.txt
-  174  git status
-  175  clear
-  176  git clean -f
-  177  touch revert.txt
-  178  git status
-  179  git add .
-  180  git status
-  181  git commit -m"adding"
-  182  git status
-  183  touch good.txt;git add .;git commit -m
-  184  touch good.txt;git add .;git commit -m"good"
-  185  git log --oneline
-  186  touch bad.txt;git add .;git commit -m"
-bad"
-  187  git log --oneline
-  188  git revert ca5b455
-  189  git log --oneline
-  190  git diff 8376ed3 ca5b455
-  191  git diff 8376ed3 961ef68
-  192  history
-
-
-Working Dir ----> Staging ----------> repo
-            ADD             Commit   
-==================================================== 
-RAJESH (REPO)
-                RAMU - Created his own repo.....
-                Reena -- She has no local repo
-
-Repo ----------- Repo
-        SSH
-        HTTP
-    ----------------
-    ---- github
-            Community
-            Enterprise
-    ----gitlab
-    ----bitbucket
-    ----gerrit
-    ----
-
-
-192  history
-  193  git log
-  194  git log --online
-  195  git log --oneline
-  196  pwd
-  197  clear
-  198  ls
-  199  cd ..
-  200  ls
-  201  mkdir meena
-  202  mkdir rami
-  203  clear
-  204  ls
-  205  git rami/
-  206  cd rami
-  207  git init
-  208  clear
-  209  cd ..
-  210  ls
-  211  cd git1/
-  212  clear
-  213  owd
-  214  pwd
-  215  git push https://github.com/devopsschool-lab-exercise/tesco-test.git master
-  216  git log --oneline
-  217  clear
-  218  ls
-  219  cd ..
-  220  ls
-  221  cd rami/
-  222  git pull https://github.com/devopsschool-lab-exercise/tesco-test.git master
-  223  git log --oneline
-  224  clear
-  225  cd ..
-  226  ls
-  227  cd meena/
-  228  git clone https://github.com/devopsschool-lab-exercise/tesco-test.git
-  229  ls
-  230  cd tesco-test/
-  231  git log --oneline
-  232  ls
-  233  history
-
-
-What if i delete a file ---> What would happen and how to get it back?
-Branching and Merging
-
-How to work with multiple People?
-    github
-
-
-PLEASE FILL THIS FROM
-http://bit.ly/2KbWznX
-
-Github----ORG
-                USERS
-                TEAM
-                GROUP
-                REPO
-
-
-
-sonu6252
-prktechie
-shashikalabhat
-ramguruju99
-chandrasangama
-AvinashChava
-Git
-Git
-ramaudaya9620
-sijocyriac
-Donknows
-
-veereshnashi
-manjugit05
-send2sivakumar
-shreeshailn
-
-==============================================
-Git Branching   
-    ------ LOCAL 
-    ------ REMOTE BRANCH
-
-
-
-
-  233  history
-  234  clear
-  235  ls
-  236  cd ..
-  237  ls
-  238  cd ..
-  239  clar
-  240  ls
-  241  clear
-  242  ls
-  243  git clone https://github.com/devopsschool-lab-exercise/tesco-common.git
-  244  ls
-  245  git clone https://github.com/devopsschool-lab-exercise/tesco-common.git dir1
-  246  ls
-  247  git clone https://github.com/devopsschool-lab-exercise/tesco-common.git dir2
-  248  lear
-  249  clear
-  250  ls
-  251  cd dir1
-  252  git status
-  253  touch rajesh1.txt
-  254  git add .
-  255  git commit -m"adding"
-  256  git config user.name "Rajesh Kumar"
-  257  git config user.email "dev@ggg.com"
-  258  git commit -m"adding"
-  259  git log
-  260  git log --oneline
-  261  git push origin master
-  262  cd ..
-  263  ls
-  264  cd dir2
-  265  clear
-  266  ls
-  267  touch fdsff.txt;git add .;git commit -m"sdfsd"
-  268  git config user.name "Rajesh Kumar"
-  269  git config user.email "dev@ggg.com"
-  270  touch fdsff.txt;git add .;git commit -m"sdfsd"
-  271  git push origin master
-  272  git pull origin master
-  273  git push origin master
-  274  clear
-  275  git branch -a
-  276  git branch -r
-  277  pwd
-  278  clear
-  279  ls
-  280  clear
-  281  ls
-  282  git branch -a
-  283  ls
-  284  git fetch origin master
-  285  clear
-  286  ls
-  287  git branch -a
-  288  git checkout
-  289  git checkout remotes/origin/master
-  290  clear
-  291  ls
-  292  git checkout master
-  293  git fetch origin master
-  294  ls
-  295  git checkout remotes/origin/master
-  296  clear
-  297  ls
-  298  git checkout master
-  299  history
-  300  git merge remotes/origin/master
-  301  ls
-  302  clear
-  303  ls
-  304  git branch
-  305  git branch fea1
-  306  git branch
-  307  git checkout fea1
-  308  ls
-  309  touch fea1.txt;git add .;git commit -m"adding fea1"
-  310  clear
-  311  ls
-  312  git checkout master
-  313  ls
-  314  git merge fea
-  315  git merge fea1
-  316  ls
-  317  git pusr origin fea1
-  318  git push origin fea1
-  319  clear
-  320  ls
-  321  vi CONF
-  322  more CONF
-  323  cat CONF
-  324  git add .;git commit -m"adding"
-  325  git checkout fea1 ea1
-  326  git checkout fea1
-  327  clear
-  328  vi CONF
-  329  git add .;git commit -m"adding"
-  330  git checkout maaster
-  331  git checkout master
-  332  git merge fea1
-  333  git status
-  334  vi CONF
-  335  git add .
-  336  git commit -m"resolved"
-  337  git merge fea1
-  338  clear
-  339  git log --online
-  340  git log --oneline
-  341  git tag list
-  342  git tag release1.0
-  343  git tag list
-  344  git tag --list
-  345  git push origin release1.0
-  346  history
-
-
-
-
-
-
-
-
-
-
-
-
+ansible-galaxy
+                custom
+                $ ansible-galaxy init web
+                reuse other roles. 
+https://galaxy.ansible.com/geerlingguy/java
+https://github.com/devops-school/ansible-hello-world-role
+
+https://github.com/devopsschool-sample-projects/ansible-hello-world-2.9
+
+Projhect - https://www.devopsschool.com/blog/ansible-role-project-1/
