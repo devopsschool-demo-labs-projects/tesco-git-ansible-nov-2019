@@ -46,4 +46,31 @@ ansible localhost -m file  -a'path=/opt/test.txt state=absent'
   - name: copy a file
     copy: dest=/var/www/html/ src="/var/www/html/index.html"
     
+    =====================================================================================
     
+    #Install a webserver httpd # use role/vars/
+  - name: Install the httpd apps
+    yum: name={{ package }}
+  - name: start the httpd service
+    service: name={{ service }} state=started
+  - name: create a empty fle
+    file: dest=/opt/test.txt state=touch
+  - name: copy a file
+    copy: dest=/var/www/html/ src=index.html
+  - name: Ansible prompt example.
+    debug:
+      msg: "{{ myname }}"
+	  
+# tasks file for webserver
+#Copy a index.j2 into /var/www/html # Use Template
+  - name: Copy a file to /var/www/html
+    template:
+    src: index.html
+    dest: /var/www/html/
+#Copy a httpd.j2 into /etc/httpd/conf/httpd.conf and change the port from 80 to 8080 # Use Template
+  - name: Copy a httpd.j2 into /etc/httpd/conf/httpd.conf
+    template:
+      src: httpd.j2
+      dest: /etc/httpd/conf/httpd.conf
+    notify:
+    - restart apache
