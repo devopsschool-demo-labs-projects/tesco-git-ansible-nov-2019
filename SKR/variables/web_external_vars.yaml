@@ -1,0 +1,8 @@
+---
+- name: Installing packages
+  hosts: web
+  vars_files:
+    - "vars.yaml"
+  tasks:
+  - name:
+    yum: name={{ package }}
