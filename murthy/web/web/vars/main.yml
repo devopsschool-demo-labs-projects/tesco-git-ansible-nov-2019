@@ -1,0 +1,10 @@
+---
+# vars file for web
+    myname: "chandra"
+    package: "httpd"
+    service: "httpd"
+    ansible_user: common
+    ansible_become: yes
+    ansible_password: Tesco@123
+    myname: chandrainv
+    ansible_become_password: Tesco@123
