@@ -431,3 +431,101 @@ ansible-playbook -i inventory2 web.yaml -u ec2-user --key-file=remote.pem -b
 
 Excericise  -2 
 https://www.devopsschool.com/blog/ansible-playbook-lab-excercise-part-2/
+
+ ansible-playbook -i inventory2 web.yaml -u ec2-user --key-file=remote.pem -b
+ =================================================================================
+ =================================================================================
+13.232.94.198
+52.66.83.204
+
+
+=========================================
+Variables - https://www.devopsschool.com/tutorial/ansible/variables/index.html
+
+- Variables - 22 PLACES
+    - Playbook
+    - Inventory
+
+- templates
+- Conditioning
+- Looping
+
+=========================================
+Variables in Playbook
+=========================================
+---
+- name: This sets up an httpd webserver
+  hosts: web
+  vars:
+    myname: "rajesh kumar in playbook"
+    package: "httpd"
+    service: "httpd"
+
+  tasks:
+  - name: Install the httpd apps
+    yum: name={{ package }}
+  - name: start the httpd service
+    service: name={{ service }} state=started
+  - name: create a empty fle
+    file: dest=/opt/test.txt state=touch
+  - name: copy a file
+    copy: dest=/var/www/html/ src="/home/ec2-user/index.html"
+  - debug:
+      msg: My Name is  {{ myname }}
+
+
+    ansible-playbook -i inventory web.yaml -u ec2-user --key-file=remote.pem -b
+
+    =========================================
+    Ansible BEHAVIORAL PARAMETERS
+    https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#connecting-to-hosts-behavioral-inventory-parameters
+
+----------inventory--------------------------
+[web]
+13.232.94.198 ansible_connection=local
+52.66.83.204 ansible_user=ec2-user ansible_ssh_private_key_file=remote.pem ansible_become=yes
+
+[db]
+13.232.94.144 ansible_password=desadasdas ansible_user=user ansible_become_user=buser ansible_become_passwor=fdsf
+52.66.83.244
+
+----------inventory--------------------------
+[web]
+13.232.94.198 ansible_connection=local myname=rjaehskumarinhost
+52.66.83.204 
+
+[db]
+13.232.94.144 ansible_password=desadasdas ansible_user=user ansible_become_user=buser ansible_become_passwor=fdsf
+52.66.83.244
+
+[web:vars]
+ansible_user=ec2-user
+ansible_ssh_private_key_file=remote.pem 
+ansible_become=yes
+myname=rjaehskumarininventory
+
+====================================================================
+---
+- name: This sets up an httpd webserver
+  hosts: web
+  vars_files:
+    - "vars.yaml"
+
+  tasks:
+  - name: Install the httpd apps
+    yum: name={{ package }}
+  - name: start the httpd service
+    service: name={{ service }} state=started
+  - name: create a empty fle
+    file: dest=/opt/test.txt state=touch
+  - name: copy a file
+    copy: dest=/var/www/html/ src="/home/ec2-user/index.html"
+  - debug:
+      msg: My Name is  {{ myname }}
+
+
+vars.yaml
+-------------
+myname: "rajesh kumar in playbook"
+package: "httpd"
+service: "httpd"
