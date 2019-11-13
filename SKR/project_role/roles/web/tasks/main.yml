@@ -1,0 +1,23 @@
+---
+# tasks file for web
+- name: Installing web server
+  yum: name={{ pkg }}
+  when: ansible_distribution == "CentOS"
+
+#- name: Copying index.j2 to index.html
+#  template: src=index.j2 dest=/var/www/html/index.html
+
+- name: Copying httpd conf
+  template: src=httpd.j2 dest=/etc/httpd/conf/httpd.conf
+  notify:
+  - Observed change in httpd conf, restarting the service
+
+- name: Copying the shell script to tmp
+  copy: src=hello.sh dest=/tmp/hello.sh mode=preserve
+
+- name: Executing shell script
+  shell: /tmp/hello.sh
+  register: shell_output
+
+- name: Copying index.j2 to index.html
+  template: src=index.j2 dest=/var/www/html/index.html

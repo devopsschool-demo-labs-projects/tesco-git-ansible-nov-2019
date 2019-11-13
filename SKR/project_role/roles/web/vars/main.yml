@@ -1,0 +1,4 @@
+---
+# vars file for web
+pkg: httpd
+port_number: 8080

@@ -1,0 +1,4 @@
+---
+# handlers file for web
+- name: Observed change in httpd conf, restarting the service
+  service: name={{ pkg }} state=restarted

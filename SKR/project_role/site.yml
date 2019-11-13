@@ -1,0 +1,6 @@
+---
+- name: The website setup playbook
+  hosts: localhost
+  become: yes
+  roles:
+    - role: web
