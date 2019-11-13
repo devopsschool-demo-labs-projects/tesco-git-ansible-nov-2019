@@ -1,0 +1,4 @@
+---
+# handlers file for myrole
+  - name: Restart webservice
+    service: name=httpd state=restarted

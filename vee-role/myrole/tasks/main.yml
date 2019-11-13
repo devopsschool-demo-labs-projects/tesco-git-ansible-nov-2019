@@ -1,0 +1,31 @@
+---
+# tasks file for myrole
+
+  - name: Install the httpd apps if the os family is RedHat
+    yum: name={{ webserver }}
+    when: ansible_os_family  == "RedHat"
+  - name: Run remote shell and regeister the output
+    shell: ls
+    register: shell_ls
+  - name: Creating a remote group. 
+    group: name={{rm_group}}  state=present
+  - name: creating a user.
+    user: name="{{rm_user.name}}" password= "{{rm_user.pass}}" groups= "{{rm_group}}"
+  - name: Changing the port to {{listenOn}}
+    template:
+      src: httpd.j2 
+      dest: //etc/httpd/conf/httpd.conf
+    notify:
+      - Restart webservice
+  - name: Templating the registered out put
+    template:
+      src: index.j2 
+      dest: /var/www/html/index.html
+    notify:
+      - Restart webservice
+  - name:  Installing the remaining services.
+    yum: pkg={{ item }} state=installed
+    with_items:
+      - git
+      - ntp
+      - vim

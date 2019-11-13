@@ -1,0 +1,12 @@
+---
+# vars file for myrole
+
+webserver: httpd
+otherservices: git, ntp, vim, tree
+rm_group: deloitte
+rm_user:  { name: deploy,pass: tesco123}
+myname: Veeresh
+
+
+
+
