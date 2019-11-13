@@ -529,3 +529,150 @@ vars.yaml
 myname: "rajesh kumar in playbook"
 package: "httpd"
 service: "httpd"
+
+=============================================
+Fact variable && Conditioning.
+======================================
+100
+
+facter
+-------------------
+    Fetch all info of SYSTEM
+
+Ansible uses Facter tool to get fact info about a server using a module called
+            ---- setup
+
+
+Conditioning 
+http://devopsschool.com/tutorial/ansible/ansible-conditional-programming-playbooks.html
+
+
+
+       when:
+          - ansible_distribution == "RedHat"
+          - ansible_distribution_major_version == "7.5"
+
+---
+- name: This sets up an httpd webserver
+  hosts: web
+  vars_files:
+    - "vars.yaml"
+
+  tasks:
+  - name: Install the httpd apps
+    yum: name={{ package }}
+  - name: start the httpd service
+    service: name={{ service }} state=started
+  - name: create a empty fle
+    file: dest=/opt/test.txt state=touch
+  - name: copy a file
+    copy: dest=/var/www/html/ src="/home/ec2-user/index.html"
+    when:
+      - ansible_distribution == "RedHat"
+      - ansible_distribution_major_version == "7"
+  - debug:
+      msg: My Name is  {{ myname }}
+    when:
+      - ansible_distribution == "RedHat"
+      - ansible_distribution_major_version == "7"
+===================================================================
+Looping in Ansible
+======================================
+https://www.devopsschool.com/tutorial/ansible/ansible/ansible-looping-programming-playbooks.html
+
+---
+- name: This sets up an httpd webserver
+  hosts: localhost
+  become: yes
+
+  tasks:
+  - name: Install common software requirements
+    yum: pkg={{ item }} state=installed
+    with_items:
+      - git
+      - ntp
+      - httpd
+
+============
+ALL PLAYBOOK Options
+https://www.devopsschool.com/blog/anatomy-of-ansible-play-defined/
+=================
+
+=================================
+var = value
+
+debug
+    msg string  "csdsfd fds fsd f {{ var }}"
+                'csds""fd fds fsd f ""{{ var }}'
+    var string
+
+==================
+cmd copy to src to dest....
+
+
+---
+- name: This sets up an httpd webserver
+  hosts: localhost
+  become: yes
+
+  tasks:
+  - name: Install common software requirements
+    command: find
+    with_items:
+      - git
+      - ntp
+      - httpd
+
+
+# Example 1
+- hosts: all
+  tasks:
+  - name: Ansible register variable basic example
+    shell: "find *.txt"
+    args:
+      chdir: /test
+    register: find_output
+  - name: example copying file with owner and permissions
+    copy:
+      src: find_output
+      dest: /tmp/test.sh
+      mode: 0644
+
+{{ find_output }}
+find_output[0]
+find_output[key]
+========================================================
+Template ----->
+            src                         dest
+copy -----> index.html ----------->   index.html
+        -----------------
+        {{ name }}
+============================
+1. Any file which need to interroplated - must be .j2
+2. Module - Template
+https://www.devopsschool.com/tutorial/ansible/ansible-playbook-template.html
+
+  - name: Copy Site Files
+    template: src=templates/index.j2 dest={{ doc_root }}/index.html
+	notify:
+      - Restart Apache
+
+---
+- name: This sets up an httpd webserver
+  hosts: localhost
+  become: yes
+  vars:
+    sitename: devopsschool
+
+  tasks:
+  - name: Install common software requirements
+    yum: pkg={{ item }} state=installed
+    with_items:
+      - git
+      - ntp
+      - httpd
+  - name: Copy Site Files
+    template: src=index.j2 dest=/var/www/html/index.html
+
+=======================================
+BEST PRACTICES
