@@ -725,3 +725,42 @@ https://github.com/devops-school/ansible-hello-world-role
 https://github.com/devopsschool-sample-projects/ansible-hello-world-2.9
 
 Projhect - https://www.devopsschool.com/blog/ansible-role-project-1/
+===================================================================
+Ansible vault
+    ----
+Ansible with windows
+===============================
+        HTTP | HTTPS WINRM
+
+
+Step 1  - Install WINRM and PS 3.X and DOTNET 4.X in WINDOWS
+http://devopsschool.com/tutorial/ansible/ansible-windows-remote-setup.html
+
+Step 2  - Inatall winrm in ACS
+https://www.devopsschool.com/tutorial/ansible/ansible-windows-control-setup.html
+
+Step 3  - Have a windows inventory with ....BEHAVIOURAL PARAM
+
+
+Step 4 - Ansibnle-playbook
+
+
+Public DNS	ec2-15-206-149-131.ap-south-1.compute.amazonaws.com
+User name	Administrator
+Password	
+M%(.Yol;F;)!;(ww*SyEE%TZxHXnju4W
+
+$password = "M%(.Yol;F;)!;(ww*SyEE%TZxHXnju4W"
+
+
+ansible_user=Administrator
+ansible_password=M%(.Yol;F;)!;(ww*SyEE%TZxHXnju4W
+ansible_connection=winrm
+ansible_winrm_transport=basic
+ansible_winrm_server_cert_validation=ignore
+
+
+https://docs.ansible.com/ansible/latest/modules/list_of_windows_modules.html
+https://www.devopsschool.com/blog/login-to-linux-ansible-remote-server-enabled-with-ldap-using-ssh/
+
+Groupvar and host_vars
