@@ -1,0 +1,16 @@
+---
+# tasks file for web
+- name: Ensure that Apache is installed
+  yum: name=httpd state=present
+  when: ansible_os_family == "RedHat"
+
+- name: Start Apache Services
+  service: name=httpd enabled=yes state=started
+
+- name: Copy Site Files
+  template: src=index.j2 dest={{ doc_root }}/index.html
+
+- name: Copy file with owner and permissions
+  copy:
+    src: sakthi.txt
+    dest: /opt/

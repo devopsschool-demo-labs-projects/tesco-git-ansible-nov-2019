@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  name: apply common configuration to all nodes
+  sudo: yes
+  gather_facts: yes
+  roles:
+    - role: vars
+    - role: geerlingguy.java
