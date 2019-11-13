@@ -7,5 +7,3 @@
 
 [rs:vars]
 ansible_user=avinash
-ansible_password=321@v1n@$h
-ansible_become_password=321@v1n@$h
