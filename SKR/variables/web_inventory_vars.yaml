@@ -1,0 +1,11 @@
+---
+- name: Installing packages
+  hosts: web
+  vars:
+    package: wget,unzip
+    myname: skr
+  tasks:
+  - name:
+    yum: name={{ package }}
+  - debug:
+      msg: My name is {{ myname }}
