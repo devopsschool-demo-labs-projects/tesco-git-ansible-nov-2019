@@ -1,0 +1,14 @@
+[web]
+192.168.56.102 ansible_connection=local
+192.168.56.103
+
+[db]
+13.232.94.144 ansible_password=desadasdas ansible_user=user ansible_become_user=buser ansible_become_passwor=fdsf
+52.66.83.244
+
+[web:vars]
+ansible_user=common
+ansible_password=Tesco@123
+ansible_become_user=common
+ansible_become_password=Tesco@123
+ansible_become=yes
