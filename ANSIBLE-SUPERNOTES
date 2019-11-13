@@ -676,3 +676,52 @@ https://www.devopsschool.com/tutorial/ansible/ansible-playbook-template.html
 
 =======================================
 BEST PRACTICES
+=======================================================
+Variables
+Tasks
+Template
+Handlers
+=========================
+    Roles
+===================================================
+Programmer
+    --20-30 PLAYBOOKS --- SO MANY Tasks
+    -- 100X variable
+    -- templates
+    -- files
+    -- Handlers
+----------------------------------
+Role 1  - WIll pLay this
+        variable
+        templates
+        files
+        handlers
+Role 2 - WIll pLay this
+        variable
+        templates
+        files
+        handlers
+
+Role 3 - WIll pLay this
+        variable
+        templates
+        files
+        handlers
+Role 4 - WIll pLay this
+        variable
+        templates
+        files
+        handlers
+
+
+==================================================
+ansible-galaxy
+                custom
+                $ ansible-galaxy init web
+                reuse other roles. 
+https://galaxy.ansible.com/geerlingguy/java
+https://github.com/devops-school/ansible-hello-world-role
+
+https://github.com/devopsschool-sample-projects/ansible-hello-world-2.9
+
+Projhect - https://www.devopsschool.com/blog/ansible-role-project-1/
